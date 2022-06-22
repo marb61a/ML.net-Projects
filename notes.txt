@@ -1,0 +1,20 @@
+Notes from Rubikscode ML.net course
+    - https://rubikscode.net/courses/ml-net-full-stack-machine-learning-for-net-developers/
+    - Machine Learning for .Net developers
+    - https://docs.microsoft.com/en-us/dotnet/machine-learning/
+    - https://github.com/dotnet/machinelearning
+
+I am very interested in ML.net as .net is used in RPA tools which gives some benefits
+    - Learning C# based machine learning which can be used not only in RPA tools
+    - https://docs.uipath.com/ai-fabric/v0/docs/building-ml-packages
+
+There are some pre-requisites for the course
+    - VSCode and Visual Studio 2022
+        - .net 6 comes with the IDE installation
+    - .net Interactive VSCode extension
+    - The notebooks involved are similar to Jupyter notebooks
+    - C# will be used instead of Python but will be used in an almost script-like manner
+
+There are some datasets that will be used within the course
+    - Palmer Penguins Dataset, Boston Housing Dataset, Netflix Prize Dataset, IMDb Sentiment Dataset and Cats vs Dogs
+
