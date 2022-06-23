@@ -18,3 +18,25 @@ There are some pre-requisites for the course
 There are some datasets that will be used within the course
     - Palmer Penguins Dataset, Boston Housing Dataset, Netflix Prize Dataset, IMDb Sentiment Dataset and Cats vs Dogs
 
+History of Machine Learning
+    - https://www.techtarget.com/whatis/A-Timeline-of-Machine-Learning-History
+    - https://www.dataversity.net/a-brief-history-of-machine-learning/
+    - Machine Learning is no longer an obscure topic
+    - Data volumes have increased by orders of magnitude in the last few years
+        - By 2025 expected to be around 200 Zettabytes
+        - A zettabyte is 1,000,000,000,000,000,000,000 or 10 to the power of 21
+    - Machine Learning and Deep Learning are very in demand skills
+    - A quick definition of Machine Learning
+        - Machine Learning is the branch of computer science which uses statistical techniques to give computers the ability to learn
+    - Learning in this context means gaining the ability to perform tasks to success rates through experience
+    - Machine Learning tries to solves problems that are tough to solve by people or standard software
+        - Problems include classification, regression, forecasting and anomaly detection
+
+Gradient Descent
+    - https://en.wikipedia.org/wiki/Gradient_descent
+    - https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html
+    - Gradient Descent is the essential optimization technique and one of the main ingredients of some algorithms
+        - It is the most popular optimisation technique and the basis for all others
+
+Performance Metrics
+    - 
