@@ -39,4 +39,35 @@ Gradient Descent
         - It is the most popular optimisation technique and the basis for all others
 
 Performance Metrics
-    - 
+    - Evaluation metrics are in general grouped by the task being solved by an algorithm
+        - For example binary classification uses a different set of metrics to determine algorithm performance than would be used in regression
+    - https://neptune.ai/blog/evaluation-metrics-binary-classification
+    - There are some terms to consider when assessing classification model performance
+        - Confusion Matrix or Error Matrix
+            - https://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/
+            - Used to describe classification model performance when true values are known
+        - Precision is another technique
+            - It also carries more information than accuracy
+            - It asks the question about what proportion of positive identications were correct
+            - The value goes from 0 to 1 and the closer to 1 the better
+        - Recall which is described as the ability of the classifier to find all the positive samples
+            - This metric tries to answer the question, What proportion of actual positives was identified correctly
+            - It is very similar to precision but differs slightly as precision measure result relevance
+            - Recall on the other hand measures how many truly relevant results are returned
+        - Accuracy is calculated as a number of correct predictions divided by the total number of predictions
+            - This can be trick as it may lead to incorrect impressions about the model especiall when using imbalanced dataschool
+            - This means thet if the model performs well on the dominant class in the dataset it may not perform as well on others
+            - Models that overfit have 100% accuracy
+        - F1 Score is probably the most popular metric that combines precision and recall
+            - It represents the harmonic mean of both
+            - Its formula is (Precision * Recall / Precision + Recall) * 2 
+        - Receiver Operating Characteristic (ROC) curve & Area Under the curve (AUC)
+            - When an ML algorithm is predicting the class of a sample it calculates the probability that it belongs to a certain class
+            - If the value is above a certain threshold then it is label as that class
+            - ROC curves show the true positive rate against the false positive rate for certain thresholds 
+            - The AUC metric is used as a measure of performance
+            - This means that ROC is a probability curve where AUC measures the separability
+            - This combination tells the model to  distinguish classes and the higher the value the better
+        - Area under Precision-Recall Curve (AUPRC)
+        - 
+    -
