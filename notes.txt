@@ -55,7 +55,7 @@ Performance Metrics
             - It is very similar to precision but differs slightly as precision measure result relevance
             - Recall on the other hand measures how many truly relevant results are returned
         - Accuracy is calculated as a number of correct predictions divided by the total number of predictions
-            - This can be trick as it may lead to incorrect impressions about the model especiall when using imbalanced dataschool
+            - This can be trick as it may lead to incorrect impressions about the model especiall when using imbalanced data
             - This means thet if the model performs well on the dominant class in the dataset it may not perform as well on others
             - Models that overfit have 100% accuracy
         - F1 Score is probably the most popular metric that combines precision and recall
@@ -69,5 +69,38 @@ Performance Metrics
             - This means that ROC is a probability curve where AUC measures the separability
             - This combination tells the model to  distinguish classes and the higher the value the better
         - Area under Precision-Recall Curve (AUPRC)
-        - 
+            - In order to correctly evaluate a model, both metrics need to be taken into consideration
+            - Unfortunately as precision improves it usually reduces recall and the opposite is also true
+            - The precision-recall curve shows the tradeoff between precision and recall
+            - Areas under the curve represents both high recall and high precision
+            - High scores for both show that the classifier is returning accurate results with a majority of positive results
+    - Multi-Class Classification Metrics
+        - Using multi-class classification we can use some of the same metrics that we use for binary classification
+        - There are some differences for multi-class classification though
+        - Confusion Matric, the difference when being used with multi-class is that each class has a row
+        - Micro and Macro Accuracy
+            - An accuracy formula can be applied for binary classification for eash class in a dataset
+            - There are 2 different ways, the first is when all classes are treated equally, the metric is computed independently for each class and the average is taken
+            - This first method is called Macro accuracy, the second is called Micro Accuracy
+            - This is when we aggregate the contributions of all classes to compute the average metric
+            - Micro Accuracy is a more reliable metric as it tries to account for any class imbalance
+        - Log-Loss & Log-Loss Reduction
+            - This is one of the most commonly used metrics in kaggle competitions
+            - Log Loss is a metric that quantifies the accuracy of a classifier by penalizing false classifications
+            - This metric’s value represents the amount of uncertainty of our prediction based on how much it varies from the actual label
+            - Log-Loss Reduction is also called reduction in information gain – RIG
+            - It gives a measure of how much a model improves on a model that gives random predictions
+            - The close that RIG is to 1 the better the model
+    - Regression Metrics 
+        - Goals from regression problems differ to classification problems so different metrics are needed
+        - Regression output is always continuous and the metrics need to match this
+        - Mean Absolute Error – MAE
+            - This calculates the average absolute distance (error) between predicted and targeted values
+            - The closer to 0 the better, this also deals with outliers fairly well
+        - Mean Squared Error – MSE
+            - This is probably the most popular metric of all regression metrics
+            - This calculates the average squared distance (error) between predicted and targeted values
+            - Results are non-negative values and the goal is to get this value as close to zero as possible
+            - This function is often used as a loss function of a machine learning model
+        -
     -
