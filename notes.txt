@@ -102,5 +102,24 @@ Performance Metrics
             - This calculates the average squared distance (error) between predicted and targeted values
             - Results are non-negative values and the goal is to get this value as close to zero as possible
             - This function is often used as a loss function of a machine learning model
-        -
-    -
+        - Root Mean Squared Error – RMSE
+            - This is a variation of the MSE metric
+            - It shows what is the average deviation in predictions from the actual values
+            - It makes and assumption that errors are unbiased and follows normal distribution 
+            - RMSE is also a non-negative value and ) is the ideal value to be achieved
+            - Lower RMSE values are better than higher
+            - Outliers do affect this metric so a dataset must have them removed prior to using this metric
+        - R Squared
+            - R Squared is used when a more intuitive approach than MSE or RMSE is needed
+            - It is also known as the coefficient of determination and is very popular
+            - https://en.wikipedia.org/wiki/Coefficient_of_determination
+
+How does ML.NET fit
+    - ML.NET is Microsoft's ML framework which allows for model running, training etc within the .net ecosystem
+    - ML.NET is faster that Pytorch using CPU
+    - ML.NET was designed to be intuitive for .NET developers
+    - The DataView class borrows from database concepts and is the reason why ML.NET is fast
+    - ML.NEt performance on the GPU is not as good as Pytorch
+    - Data Preprocession can be complicated
+    - There not that many tools for data visualisation
+    
