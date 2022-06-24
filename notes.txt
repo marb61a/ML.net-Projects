@@ -4,6 +4,18 @@ Notes from Rubikscode ML.net course
     - https://docs.microsoft.com/en-us/dotnet/machine-learning/
     - https://github.com/dotnet/machinelearning
 
+Complete suite of .NET versions of ML\AI libraries
+    - https://scisharp.github.io/SciSharp/
+    - https://github.com/SciSharp
+    - https://github.com/dotnet/TorchSharp
+
+Nimbus ML provides python bindings for ML.NET
+    - https://docs.microsoft.com/en-us/nimbusml/overview
+    - https://github.com/microsoft/NimbusML
+
+Using Model Builder in VSCode
+    - https://www.youtube.com/watch?v=R8aCkjSTSuc
+
 I am very interested in ML.net as .net is used in RPA tools which gives some benefits
     - Learning C# based machine learning which can be used not only in RPA tools
     - https://docs.uipath.com/ai-fabric/v0/docs/building-ml-packages
@@ -123,3 +135,10 @@ How does ML.NET fit
     - Data Preprocession can be complicated
     - There not that many tools for data visualisation
     
+Intuition to Linear Regression
+    - https://machinelearningmastery.com/linear-regression-for-machine-learning/
+    - The output of solving a regression problem is a continuous numerical value
+        - One of the most famous is predicting the price of a house based on tenants ages which are independent variables
+    - There are multiple sources for learning about the mathematics involved in linear regression
+        - https://www.analyticsvidhya.com/blog/2021/08/understanding-linear-regression-with-mathematical-insights/
+        
