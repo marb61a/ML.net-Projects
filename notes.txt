@@ -141,4 +141,14 @@ Intuition to Linear Regression
         - One of the most famous is predicting the price of a house based on tenants ages which are independent variables
     - There are multiple sources for learning about the mathematics involved in linear regression
         - https://www.analyticsvidhya.com/blog/2021/08/understanding-linear-regression-with-mathematical-insights/
-        
+
+
+
+Troubleshooting
+Running C# code from CLI in VSCode
+    - https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?pivots=dotnet-6-0
+    - https://www.youtube.com/watch?v=CO4BGZOuUkM&t=435s
+
+Install ML.NET into a project
+    - https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/install-ml-net-cli?tabs=windows
+    
