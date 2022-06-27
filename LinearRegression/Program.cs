@@ -16,16 +16,16 @@ Console.WriteLine($"{string.Join(", ", prediction.Select(p => p.ToString()))}");
 Console.WriteLine("Actual Value:");
 Console.WriteLine($"{string.Join(", ", y.Select(p => p.ToString()))}");
 
-double[,] mX = { { 1, 2, 3},
-                { 2, 9, 11},
-                { 56, 111, 66}};
+// double[,] mX = { { 1, 2, 3},
+//                 { 2, 9, 11},
+//                 { 56, 111, 66}};
 
-double[,] my = { { 6 }, { 6 }, { 11 } };
+// double[,] my = { { 6 }, { 6 }, { 11 } };
 
-var multipleLinearRegression = new MultipleLinearRegression();
-multipleLinearRegression.Fit(mX, my);
-var predictions = multipleLinearRegression.Predict(new double[,] { { 3 }, { 5 }, { 7 } });
+// var multipleLinearRegression = new MultipleLinearRegression();
+// multipleLinearRegression.Fit(mX, my);
+// var predictions = multipleLinearRegression.Predict(new double[,] { { 3 }, { 5 }, { 7 } });
 
-Console.WriteLine($"Multiple Linear Regression Prediction: {predictions}");
+// Console.WriteLine($"Multiple Linear Regression Prediction: {predictions}");
 
-Console.ReadLine();
+// Console.ReadLine();

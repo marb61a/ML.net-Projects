@@ -1,4 +1,4 @@
-namespace LinearRegression
+namespace LinearRegressionBasic
 {
     public class LinearRegression
     {

@@ -13,3 +13,5 @@ C:\Users\marb6\OneDrive\Documents\MLNetProjects\LinearRegression\obj\Debug\net6.
 C:\Users\marb6\OneDrive\Documents\MLNetProjects\LinearRegression\obj\Debug\net6.0\LinearRegression.pdb
 C:\Users\marb6\OneDrive\Documents\MLNetProjects\LinearRegression\obj\Debug\net6.0\LinearRegression.genruntimeconfig.cache
 C:\Users\marb6\OneDrive\Documents\MLNetProjects\LinearRegression\obj\Debug\net6.0\ref\LinearRegression.dll
+C:\Users\marb6\OneDrive\Documents\MLNetProjects\LinearRegression\bin\Debug\net6.0\MathNet.Numerics.dll
+C:\Users\marb6\OneDrive\Documents\MLNetProjects\LinearRegression\obj\Debug\net6.0\LinearRegression.csproj.CopyComplete
