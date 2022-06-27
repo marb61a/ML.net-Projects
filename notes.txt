@@ -141,8 +141,30 @@ Intuition to Linear Regression
         - One of the most famous is predicting the price of a house based on tenants ages which are independent variables
     - There are multiple sources for learning about the mathematics involved in linear regression
         - https://www.analyticsvidhya.com/blog/2021/08/understanding-linear-regression-with-mathematical-insights/
+    - Multiple linear regression uses the reknowned Boston housing dataset
+        - https://corporatefinanceinstitute.com/resources/knowledge/other/multiple-linear-regression/
 
+Using Notebooks for Linear Regression
+    - There are several steps needed
+    - Install packages (NNuGet) and add using directives
+    - Load and split the data
+    - Train the model
+    - Evaluate the model
+    - Save the model
+    - Load and predict
 
+ML.NET Linear Regression
+    - Online Gradient Descent
+        - This is a variation of Stochastic Gradient Descent
+        - It has a choice of loss functions and an option to update the weight vector which uses the vector average seen over time
+    - SDCA which stands for Stochastic Dual Coordinate Ascent
+        - It is another variation on Stochastic  Gradient Descent
+        - This is suitable for large datasets as it can be scaled easily
+
+Using C# Notebooks in VSCode
+    - Files will still have the .ipynb extension
+    - The kernel that will be used though is .NET interactive rather than a Python kernel
+    
 
 Troubleshooting
 Running C# code from CLI in VSCode
