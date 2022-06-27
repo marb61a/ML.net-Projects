@@ -151,4 +151,11 @@ Running C# code from CLI in VSCode
 
 Install ML.NET into a project
     - https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/install-ml-net-cli?tabs=windows
-    
+    - dotnet tool install --global mlnet-win-x64
+    - Confirm installation has worked by the following command
+        - mlnet
+
+Install MathNet package into project
+    - https://www.nuget.org/packages/MathNet.Numerics/
+    - Using the .NET_CLI -- dotnet add package Mathnet.Numerics
+    - Versions can be specified but if a version is not specified then the latest is installed
