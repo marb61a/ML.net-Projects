@@ -186,7 +186,28 @@ Using C# Notebooks in VSCode
         - This takes 2 parameters which are label column name and feature
             - A feature column is added using the featureColumnName which is then given a value
             - A label column is defined using the labelColumnName directive which is then given a value
-    -
+        - The dataset will need to be normalised prior to training
+            - Training is a process which puts everything into the same scale
+            - Differing scales can cause issues when training
+            - The rivercoast feature is categorical which is a discrete\categorical value
+        - We can create a piepline where all of the needed normalisation can be done
+            - These can be done with MLContext Transforms
+            - To transform categorical data use OneHotEncoding
+                - One hot encoding is a process by which categorical variables are converted into a form that could be provided to ML algorithms
+                - https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f
+            - After categorical data has been encoded then each of the features can be added using the Concatenate method available to Transforms
+            - Then it is time for normalisation this time using NormalizeLpNorm
+                - This takes 2 parameters which are source and destination, in this case "Features" for both
+        - Once the pipeline has been set up then it can be used to train the model
+            - The fit method is called then to train the training portion of the dataset
+    - Evaluate the model
+        - After the model has been trained then it is time for its performance to be evaluated
+        - Using the trainedModel and Transform which takes the dataset TestSet
+        - Evaluation can then be done with MLContext Regression and the Evaluate method which takes the variable that the transform operations have been assigned to
+        - These metrics are MSE, MAE, RMSE, R Squared and Loss function
+    - Save the model
+        - 
+    - Load the model
 
 Troubleshooting
 Running C# code from CLI in VSCode
