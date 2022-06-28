@@ -164,7 +164,29 @@ ML.NET Linear Regression
 Using C# Notebooks in VSCode
     - Files will still have the .ipynb extension
     - The kernel that will be used though is .NET interactive rather than a Python kernel
-    
+    - When installing packages use #r and then package name
+        - In python notebooks this is done with an !
+    - When loading a csv file
+        - Use LoadFromTextFile<> which is part of MLContext.Data
+        - This takes a couple of parameters, the name of the class (type) between the <>
+        - The file path and whether the file has headers in the following brackets
+            - Using the hasHeader directive which is set to true or false
+        - Then the file delimiter is added using the separatorChar directive followed in this case by a comma
+    - Splitting a dataset into testing and training
+        - Again use MLContext.Data this time adding the TrainTestSplit method
+        - The first parameter is the dataview created when loading the data
+        - The second parameter is the amount of data to be used for testing using the testFraction directive which is set to 0.2 which equals 20%
+        - The training dataset can be examined by using the variable that is assigned to the split and adding the TrainSet method for the training data
+        - Then chain the ToTabularDataResource method on
+        !!!! - Using a semi-colon will prevent the table from displaying
+        - The test portion of the dataset can be loaded similar to above but using the TestSet method
+    - Training the model
+        - This uses the MLContext followed by Regression which then has trainers and finally the algorithm which is being used
+        - In this case it is the SDCA algorithm being used to train the data
+        - This takes 2 parameters which are label column name and feature
+            - A feature column is added using the featureColumnName which is then given a value
+            - A label column is defined using the labelColumnName directive which is then given a value
+    -
 
 Troubleshooting
 Running C# code from CLI in VSCode
