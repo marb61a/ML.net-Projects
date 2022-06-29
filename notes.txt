@@ -206,8 +206,28 @@ Using C# Notebooks in VSCode
         - Evaluation can then be done with MLContext Regression and the Evaluate method which takes the variable that the transform operations have been assigned to
         - These metrics are MSE, MAE, RMSE, R Squared and Loss function
     - Save the model
-        - 
-    - Load the model
+        - Once the model has been trained it is time to save it for further use into the future
+        - This is done using MLContext.Model.Save and takes some parameters strating with the trainedModel
+        - The next parameter is the data schema which is needed, in this case the training data schema
+        - The final parameter is the location the model will be saved, the model will always need a .mdl file extension
+    - Load the model and Predict
+        - This loads the model from the created file and can be used for predictions
+        - The first step is to create a new sample which can be used to see if the model will predict correctly
+        - In this case the first sample from the boston dataset serves well
+        - Then the model is loaded using filestream and a using statement
+        - The various file methods can then be used, FileMode set to open, FileAccess set to read and the same for FileAccess
+        - This allows for opening the file, reading it and then again subsequently
+        - Then load the model using MLContext.Model.Load
+        - After the model has been loaded then the prediction engine needs to be created once again using methods from the model catalogue
+        - Once the prediction engine has been put in place it can then be used with the prediction method and the new sample for a prediction
+
+Classification
+    - https://towardsdatascience.com/machine-learning-classifiers-a5cc4e1b0623
+    - The section will cover both binary and multiclass classification using both notebooks and normal projects
+    - Classification algorithms build decision boundaries implicitly or explicitly
+        - These boundaries can be straight, curved or have complex forms
+        - The form of the boundary will determine the accuracy of the model
+    -
 
 Troubleshooting
 Running C# code from CLI in VSCode
