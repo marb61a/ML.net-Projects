@@ -3,6 +3,7 @@ Notes from Rubikscode ML.net course
     - Machine Learning for .Net developers
     - https://docs.microsoft.com/en-us/dotnet/machine-learning/
     - https://github.com/dotnet/machinelearning
+    - I have started using NB prefix for projects when using interactive notebooks
 
 Complete suite of .NET versions of ML\AI libraries
     - https://scisharp.github.io/SciSharp/
@@ -227,7 +228,31 @@ Classification
     - Classification algorithms build decision boundaries implicitly or explicitly
         - These boundaries can be straight, curved or have complex forms
         - The form of the boundary will determine the accuracy of the model
-    -
+    - Classification works with discrete values, these are not continuous like regression
+        - A person either is a gender or not, speaks a language or not etc
+Binary classification notebook
+    - This uses the penguins size dataset
+    - The same packages as regression will need to be installed
+    - Again the .NET interactive kernel is used
+        - If not set then python will try to run those cells which cause errors
+    - The same using directives are also needed at this point
+    - Not all features will be used in the binary classification notebook example
+    - After creating the class for holding the features that are needed another class is added for predictions
+        - This will have a boolean method as classification is inherently true or false
+    - Then it is time to import the data
+        - Again as previously MLContext is used, this is used with the LoadFromTextFile method
+        - This is a template function so the type wanted needs to be added which is the first class created
+        - The parameters are then added starting with the data location and then whether there are headers and the separating character
+    - After the data has be imported then it is time to split the data into test and train portions
+        - In this example this will be 0.3 or 30%
+        - This can be viewed using the ToTabularDataResource method again remebering to have no semi-colon to ensure rendering of table
+    - The algorithm that will be used in modelling in this section is LBFGS
+        - It is a variation on the the logistic regression that is based on the limited memory Broyden-Fletcher-Goldfarb-Shanno hence L-BFGS
+        - https://en.wikipedia.org/wiki/Limited-memory_BFGS
+    - The model will use MLContext.BinaryClassification.Trainers.LbfgsLogisticRegression
+        - The name of the features column and label column will need to be set here as it was in the regression example
+    - After stting up the model then it is time to construct a pipeline
+    - 
 
 Troubleshooting
 Running C# code from CLI in VSCode
