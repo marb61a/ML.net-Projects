@@ -252,6 +252,23 @@ Binary classification notebook
     - The model will use MLContext.BinaryClassification.Trainers.LbfgsLogisticRegression
         - The name of the features column and label column will need to be set here as it was in the regression example
     - After stting up the model then it is time to construct a pipeline
+        - This follows much tthe same process as seen previously
+        - Again the data needs to be normaised this time using the NormalizeMinMax function
+        - This is based on using the minimum and maximum values as a guide
+        - There is also a need for source and destination parameters (Both can be set to "features")
+        - Finally append the model to the pipeline
+    - After setting up the pipeline then it is time to train the model
+        - This is done using the Fit method
+    - Then it is time to evaluate, first the test portion of the dataset needs to be transformed
+        - Then this transformed data is passed to an Evaluation function which is part of the MLContext.BinaryClassification catalogue
+        - The accuracy can be seen by printing out the metrics result and using its Accuracy method
+    - After evaulation the result is about 96%
+        - This means that it is good enought to be saved to disk
+        - This saving and reloading will be the same as for the regression project
+
+Standard C# Binary Classification
+    - The projects that are using standard C# development techniques will not have a prefix, notebook projects begin with NB
+        - There can be a standard console application used for this project
     - 
 
 Troubleshooting
@@ -269,3 +286,7 @@ Install MathNet package into project
     - https://www.nuget.org/packages/MathNet.Numerics/
     - Using the .NET_CLI -- dotnet add package Mathnet.Numerics
     - Versions can be specified but if a version is not specified then the latest is installed
+
+Running cells
+    - This can be done using either the play buuton or shift+enter
+    
