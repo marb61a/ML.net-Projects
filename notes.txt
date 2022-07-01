@@ -269,7 +269,23 @@ Binary classification notebook
 Standard C# Binary Classification
     - The projects that are using standard C# development techniques will not have a prefix, notebook projects begin with NB
         - There can be a standard console application used for this project
-    - 
+    - Firstly install a console application into the folder using the following command 
+        - dotnet new console --framework net6.0
+    - Once that is done then add in the data which will be in a data folder, again the PalmerPenguins dataset will be used
+    - Then it is time to start adding in files and folders first up is a usings file to list all the using statements in the project
+        - Each statement will be accompanied by a global keyword to make the usings available to all files
+        - https://www.c-sharpcorner.com/article/global-using-directive-in-c-sharp-102/
+    - Then a MachineLearning folder will be added, it will have several subfolders
+        - DataModels which have 2 files, one is where we setup the type using LoadColumns to setup the appropriate structure
+        - The second file will be the file that is used when predicting, it only needs a single variable
+    - Then there is Common folder which contains the ITrainerBase class 
+        - C# interfaces contain declarations of methods, properties, indexers, and events
+        - https://www.tutorialsteacher.com/csharp/csharp-interface
+    - After the interface comes the implementation class, this time called TrainerBase
+        - This class is public and will need to use the items from the interface
+        - https://www.w3schools.com/cs/cs_interface.php
+        - It will need to implement all items from the interface to avoid errors
+    -
 
 Troubleshooting
 Running C# code from CLI in VSCode
