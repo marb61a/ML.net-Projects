@@ -10,5 +10,5 @@ public class PalmerPenguinsBinaryData
     public bool CulmenLength { get; set; }
 
     [LoadColumn(3)]
-    public bool Culmendepth { get; set; }
+    public bool CulmenDepth { get; set; }
 }

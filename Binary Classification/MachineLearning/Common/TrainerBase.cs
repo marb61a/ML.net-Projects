@@ -1,3 +1,5 @@
+using BinaryClassification.MachineLearning.DataModels;
+
 namespace BinaryClassification.MachineLearning.Common
 {
     public class TrainerBase<TParameters> : ITrainerBase
@@ -7,7 +9,7 @@ namespace BinaryClassification.MachineLearning.Common
 
         // Defines where the created model will be saved to on the file system
         protected static string ModelPath => Path.Combine(AppContext.BaseDirectory, "classification.mdl");
-        protected readonly MLContext mLContext;
+        protected readonly MLContext mlContext;
 
         // Loads data and splits into test and train data
         protected DataOperationsCatalog.TrainTestData _dataSplit;
@@ -18,7 +20,7 @@ namespace BinaryClassification.MachineLearning.Common
 
         protected TrainerBase()
         {
-            mLContext = new MLContext(11);
+            mlContext = new MLContext(11);
         }
 
         public BinaryClassificationMetrics Evaluate()
@@ -26,18 +28,40 @@ namespace BinaryClassification.MachineLearning.Common
             throw new NotImplementedException();
         }
 
-        // Check if file exists
+        // Check if file exists and if it does pass in the training file
         public void Fit(string trainingFileName)
         {
             if(!File.Exists(trainingFileName))
             {
                 throw new FileNotFoundException($"File {trainingFileName} does not exist");
             }
+
+            _dataSplit = LoadAndPrepareData(trainingFileName);
         }
 
         public void Save()
         {
             throw new NotImplementedException();
+        }
+
+        // Loads and prepares data
+        private DataOperationsCatalog.TrainTestData LoadAndPrepareData(string trainingFileName)
+        {
+            var trainingDataView = mlContext.Data.LoadFromTextFile<PalmerPenguinsBinaryData>(trainingFileName, hasHeader: true, separatorChar: ',');
+            return mlContext.Data.TrainTestSplit(trainingDataView, testFraction: 0.3);
+        }
+
+        // Build pipeline
+        private EstimatorChain<NormalizingTransformer> BuildDataProcessingPipeline()
+        {
+            var pipeline = mlContext.Transforms.Concatenate("Features",
+                nameof(PalmerPenguinsBinaryData.CulmenDepth),
+                nameof(PalmerPenguinsBinaryData.CulmenLength)
+                )
+                .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
+                .AppendCacheCheckpoint(mlContext);
+            
+            return pipeline;
         }
     }
 }
