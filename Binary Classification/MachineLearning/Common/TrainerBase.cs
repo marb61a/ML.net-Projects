@@ -25,7 +25,9 @@ namespace BinaryClassification.MachineLearning.Common
 
         public BinaryClassificationMetrics Evaluate()
         {
-            throw new NotImplementedException();
+            var testSetTransform = _trainedModel.Transform(_dataSplit.TestSet);
+
+            return mlContext.BinaryClassification.EvaluateNonCalibrated(testSetTransform);
         }
 
         // Check if file exists and if it does pass in the training file
@@ -37,11 +39,15 @@ namespace BinaryClassification.MachineLearning.Common
             }
 
             _dataSplit = LoadAndPrepareData(trainingFileName);
+            var pipeline = BuildDataProcessingPipeline();
+
+            var trainingPipeline = pipeline.Append(_model);
+            _trainedModel = trainingPipeline.Fit(_dataSplit.TrainSet);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            mlContext.Model.Save(_trainedModel, _dataSplit.TrainSet.Schema, ModelPath);
         }
 
         // Loads and prepares data
