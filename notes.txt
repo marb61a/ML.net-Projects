@@ -285,7 +285,28 @@ Standard C# Binary Classification
         - This class is public and will need to use the items from the interface
         - https://www.w3schools.com/cs/cs_interface.php
         - It will need to implement all items from the interface to avoid errors
-    -
+    -  This project makes use of several trainers including the LbfgsLogisticRegression
+        - Others are AveragedPerceptronTrainer
+        - PriorTrainer
+        - SDCALogisticRegressionTrainer
+        - SDCANonCalibratedTrainer
+        - SGDCalibratedTrainer
+        - SGDNonCalibratedTrainer
+
+Multiclass Classification notebook
+    - There are different algorithms support when running multiclass classification
+        - LBFGS Maximum Entropy
+            - This maximum entropy model differs from logistic regression in the number of classes supported
+            - Logistic regression is used for binary classification whereas the maximum entropy handles multiple classes
+            - It is also based on the Broyden-Fletcher-Goldfarb-Shanno method
+        - Naive Bayes
+        - One versus all
+            - This performs binary classification for each class of the dataset and then creates multiple binary classifiers
+            - Predictions are then made by running binary classifiers against each other to find the one with the highest confidence score
+        - SDCA Maximum Entropy
+            - This is also based on logistic regression
+        - SDCA Non-Calibrated which is the uncalibrated version of the above algorithm
+    - 
 
 Troubleshooting
 Running C# code from CLI in VSCode
@@ -305,4 +326,8 @@ Install MathNet package into project
 
 Running cells
     - This can be done using either the play buuton or shift+enter
-    
+
+
+Naming Training files
+    - This has caused some issues with some files name clashing with ML library files
+    - I have added U into the filename to indicate that this is a user generated file
