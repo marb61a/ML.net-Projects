@@ -2,10 +2,10 @@ using BinaryClassification.MachineLearning.Common;
 
 namespace BinaryClassification.MachineLearning.Trainers;
 
-public class SgdCalibratedTrainer: 
+public class SgdUCalibratedTrainer: 
     TrainerBase<CalibratedModelParametersBase<LinearBinaryModelParameters, PlattCalibrator>>
 {
-    public SgdCalibratedTrainer() : base()
+    public SgdUCalibratedTrainer() : base()
     {
         Name = "Sgd Calibrated";
         _model = mlContext

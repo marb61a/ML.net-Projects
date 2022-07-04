@@ -2,9 +2,9 @@ using BinaryClassification.MachineLearning.Common;
 
 namespace BinaryClassification.MachineLearning.Trainers;
 
-public class AveragedPerceptronTrainer : TrainerBase<LinearBinaryModelParameters>
+public class AveragedUPerceptronTrainer : TrainerBase<LinearBinaryModelParameters>
 {
-    public AveragedPerceptronTrainer() : base()
+    public AveragedUPerceptronTrainer() : base()
     {
         Name = "Averaged Perceptron";
         _model = mlContext

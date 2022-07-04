@@ -2,9 +2,9 @@ using BinaryClassification.MachineLearning.Common;
 
 namespace BinaryClassification.MachineLearning.Trainers;
 
-public class SgdNonCalibratedTrainer : TrainerBase<LinearBinaryModelParameters>
+public class SgdUNonCalibratedTrainer : TrainerBase<LinearBinaryModelParameters>
 {
-    public SgdNonCalibratedTrainer() : base()
+    public SgdUNonCalibratedTrainer() : base()
     {
         Name = "Sgd NonCalibrated";
         _model = mlContext

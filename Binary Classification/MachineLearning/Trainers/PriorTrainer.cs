@@ -2,9 +2,9 @@ using BinaryClassification.MachineLearning.Common;
 
 namespace BinaryClassification.MachineLearning.Trainers;
 
-public class PriorTrainer : TrainerBase<PriorModelParameters>
+public class PriorUTrainer : TrainerBase<PriorModelParameters>
 {
-    public PriorTrainer() : base()
+    public PriorUTrainer() : base()
     {
         Name = "Prior";
         _model =  mlContext

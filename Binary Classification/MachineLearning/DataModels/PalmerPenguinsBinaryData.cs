@@ -7,8 +7,8 @@ public class PalmerPenguinsBinaryData
     public bool Label { get; set; }
 
     [LoadColumn(2)]
-    public bool CulmenLength { get; set; }
+    public float CulmenLength { get; set; }
 
     [LoadColumn(3)]
-    public bool CulmenDepth { get; set; }
+    public float CulmenDepth { get; set; }
 }
