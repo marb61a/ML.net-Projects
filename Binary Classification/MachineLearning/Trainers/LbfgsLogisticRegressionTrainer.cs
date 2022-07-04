@@ -5,7 +5,7 @@ namespace BinaryClassification.MachineLearning.Trainers
     public class LbfgsLogisticRegressionTrainer:
         TrainerBase<CalibratedModelParametersBase<LinearBinaryModelParameters, PlattCalibrator>>
     {
-         public LbfgsLogisticRegressionTrainer() : base()
+        public LbfgsLogisticRegressionTrainer() : base()
         {
             Name = "LBFGS Logistic Regression";
             _model = mlContext
