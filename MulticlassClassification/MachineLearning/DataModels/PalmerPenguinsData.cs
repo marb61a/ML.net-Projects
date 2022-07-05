@@ -1,7 +1,7 @@
 namespace BinaryClassification.MachineLearning.DataModels;
 
 // Models Palmer Penguins Binary Data
-public class PalmerPenguinsBinaryData
+public class PalmerPenguinsData
 {
     [LoadColumn(0)]
     public bool Label { get; set; }
