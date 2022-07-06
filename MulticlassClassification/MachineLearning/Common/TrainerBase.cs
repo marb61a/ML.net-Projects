@@ -1,10 +1,8 @@
 using MulticlassClassification.MachineLearning.DataModels;
-using MulticlassClassification.MachineLearning.Common;
 
 namespace MulticlassClassification.MachineLearning.Common
 {
-    public class TrainerBase<TParameters> : ITrainerBase
-        where TParameters : class
+    public class TrainerBase<TParameters> : ITrainerBase where TParameters : class
     {
         public string Name { get; protected set; }
 
@@ -56,7 +54,7 @@ namespace MulticlassClassification.MachineLearning.Common
         // Loads and prepares data
         private DataOperationsCatalog.TrainTestData LoadAndPrepareData(string trainingFileName)
         {
-            var trainingDataView = mlContext.Data.LoadFromTextFile<PalmerPenguinsPrediction>(trainingFileName, hasHeader: true, separatorChar: ',');
+            var trainingDataView = mlContext.Data.LoadFromTextFile<PalmerPenguinsData>(trainingFileName, hasHeader: true, separatorChar: ',');
             return mlContext.Data.TrainTestSplit(trainingDataView, testFraction: 0.3);
         }
 
