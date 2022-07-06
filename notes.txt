@@ -306,7 +306,26 @@ Multiclass Classification notebook
         - SDCA Maximum Entropy
             - This is also based on logistic regression
         - SDCA Non-Calibrated which is the uncalibrated version of the above algorithm
-    - 
+    - This uses a slightly different version of the penguins dataset
+        - There are no 0 and 1 values for species
+        - This is the full dataset rather than the subset previously used
+    - This dataset does not have the species column which means the there will  need to be a conversion of the first column
+        - This column is the species label but needs to be in numerical form when building the pipeline
+        - This is handled by using mlContext.Transforms.Conversion.MapValueToKey() where MapValueToKey maps the text value to a numerical value
+        - This takes 2 parameters an input column name and an output column name
+
+Multiclass Classification Project (Non-notebook)
+    - This is also very similar to the binary classification project
+    - Again use the following command to create a new console project
+        - dotnet new console --framework net6.0  
+        - Manifests and packages will have to be installed
+            - dotnet new tool-manifest
+            - dotnet add package Microsoft.ML 
+            - dotnet add package MathNet.Numerics
+    - Subtle differences only such as the Evalute methods
+        - In the binary classification used mlContext.BinaryClassification.EvaluateNonCalibrated
+        - In the multiclass classification it was mlContext.MulticlassClassification.Evaluate
+        - very large parts of the project was the same except changing names to multiclass instead of binary
 
 Troubleshooting
 Running C# code from CLI in VSCode
@@ -327,7 +346,10 @@ Install MathNet package into project
 Running cells
     - This can be done using either the play buuton or shift+enter
 
-
 Naming Training files
     - This has caused some issues with some files name clashing with ML library files
     - I have added U into the filename to indicate that this is a user generated file
+
+Copying files
+    - Ensure that namespaces are changed and that datasets are the same !!!
+    
