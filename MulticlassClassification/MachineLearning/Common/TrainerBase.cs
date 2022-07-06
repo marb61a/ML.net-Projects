@@ -1,4 +1,5 @@
 using BinaryClassification.MachineLearning.DataModels;
+using BinaryClassification.MachineLearning.Common;
 
 namespace BinaryClassification.MachineLearning.Common
 {
@@ -23,7 +24,7 @@ namespace BinaryClassification.MachineLearning.Common
             mlContext = new MLContext(11);
         }
 
-        public MultiClassificationMetrics Evaluate()
+        public MulticlassClassificationMetrics Evaluate()
         {
             var testSetTransform = _trainedModel.Transform(_dataSplit.TestSet);
 
@@ -42,7 +43,7 @@ namespace BinaryClassification.MachineLearning.Common
             var dataProcessPipeline = BuildDataProcessingPipeline();
             var trainingPipeline = dataProcessPipeline
                 .Append(_model)
-                .Append(MlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+                .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
 
             _trainedModel = trainingPipeline.Fit(_dataSplit.TrainSet);
         }
@@ -55,17 +56,17 @@ namespace BinaryClassification.MachineLearning.Common
         // Loads and prepares data
         private DataOperationsCatalog.TrainTestData LoadAndPrepareData(string trainingFileName)
         {
-            var trainingDataView = mlContext.Data.LoadFromTextFile<PalmerPenguinsBinaryData>(trainingFileName, hasHeader: true, separatorChar: ',');
+            var trainingDataView = mlContext.Data.LoadFromTextFile<PalmerPenguinsPrediction>(trainingFileName, hasHeader: true, separatorChar: ',');
             return mlContext.Data.TrainTestSplit(trainingDataView, testFraction: 0.3);
         }
 
         // Build pipeline
         private EstimatorChain<NormalizingTransformer> BuildDataProcessingPipeline()
         {
-             var dataProcessPipeline = MlContext.Transforms.Conversion.MapValueToKey(inputColumnName: nameof(PalmerPenguinsData.Label), outputColumnName: "Label")
-                .Append(MlContext.Transforms.Text.FeaturizeText(inputColumnName: "Sex", outputColumnName: "SexFeaturized"))
-                .Append(MlContext.Transforms.Text.FeaturizeText(inputColumnName: "Island", outputColumnName: "IslandFeaturized"))
-                .Append(MlContext.Transforms.Concatenate("Features",
+             var dataProcessPipeline = mlContext.Transforms.Conversion.MapValueToKey(inputColumnName: nameof(PalmerPenguinsData.Label), outputColumnName: "Label")
+                .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName: "Sex", outputColumnName: "SexFeaturized"))
+                .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName: "Island", outputColumnName: "IslandFeaturized"))
+                .Append(mlContext.Transforms.Concatenate("Features",
                                                 "IslandFeaturized",
                                                 nameof(PalmerPenguinsData.CulmenLength),
                                                 nameof(PalmerPenguinsData.CulmenDepth),
@@ -73,8 +74,8 @@ namespace BinaryClassification.MachineLearning.Common
                                                 nameof(PalmerPenguinsData.FliperLength),
                                                 "SexFeaturized"
                                                 ))
-                .Append(MlContext.Transforms.NormalizeMinMax("Features", "Features"))
-                .AppendCacheCheckpoint(MlContext);
+                .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
+                .AppendCacheCheckpoint(mlContext);
 
             return dataProcessPipeline;
         }
