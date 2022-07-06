@@ -1,3 +1,5 @@
+using MulticlassClassification.MachineLearning.Common;
+
 namespace MulticlassClassification.MachineLearning.Trainers;
 
 public class SdcaUNonCalibratedTrainer : TrainerBase<LinearMulticlassModelParameters>
@@ -5,6 +7,6 @@ public class SdcaUNonCalibratedTrainer : TrainerBase<LinearMulticlassModelParame
     public SdcaUNonCalibratedTrainer() : base()
     {
         Name = "Sdca NonCalibrated";
-        _model = MlContext.MulticlassClassification.Trainers.SdcaNonCalibrated(labelColumnName: "Label", featureColumnName: "Features");
+        _model = mlContext.MulticlassClassification.Trainers.SdcaNonCalibrated(labelColumnName: "Label", featureColumnName: "Features");
     }
 }

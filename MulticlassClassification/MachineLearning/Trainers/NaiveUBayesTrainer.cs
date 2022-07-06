@@ -7,7 +7,7 @@ public class NaiveUBayesTrainer : TrainerBase<NaiveBayesMulticlassModelParameter
     public NaiveUBayesTrainer() : base()
     {
         Name = "Naive Bayes";
-        _model = MlContext.MulticlassClassification.Trainers
+        _model = mlContext.MulticlassClassification.Trainers
                     .NaiveBayes(labelColumnName: "Label", featureColumnName: "Features");
     }
 }

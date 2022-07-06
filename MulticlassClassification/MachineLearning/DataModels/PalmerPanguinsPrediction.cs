@@ -1,4 +1,4 @@
-namespace BinaryClassification.MachineLearning.DataModels;
+namespace MulticlassClassification.MachineLearning.DataModels;
 
 // Models Palmer Penguins Binary Prediction
 public class PalmerPenguinsPrediction

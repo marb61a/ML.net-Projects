@@ -1,7 +1,7 @@
-using BinaryClassification.MachineLearning.DataModels;
-using BinaryClassification.MachineLearning.Common;
+using MulticlassClassification.MachineLearning.DataModels;
+using MulticlassClassification.MachineLearning.Common;
 
-namespace BinaryClassification.MachineLearning.Common
+namespace MulticlassClassification.MachineLearning.Common
 {
     public class TrainerBase<TParameters> : ITrainerBase
         where TParameters : class
@@ -28,7 +28,7 @@ namespace BinaryClassification.MachineLearning.Common
         {
             var testSetTransform = _trainedModel.Transform(_dataSplit.TestSet);
 
-            return mlContext.MulticlassClassification.EvaluateNonCalibrated(testSetTransform);
+            return mlContext.MulticlassClassification.Evaluate(testSetTransform);
         }
 
         // Check if file exists and if it does pass in the training file

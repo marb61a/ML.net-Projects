@@ -7,6 +7,6 @@ public class LbfgsUMaximumEntropyTrainer : TrainerBase<MaximumEntropyModelParame
     public LbfgsUMaximumEntropyTrainer() : base()
     {
         Name = "LBFGS Maximum Entropy";
-        _model = MlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(labelColumnName: "Label", featureColumnName: "Features");
+        _model = mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(labelColumnName: "Label", featureColumnName: "Features");
     }
 }

@@ -1,4 +1,4 @@
-namespace BinaryClassification.MachineLearning.Common;
+namespace MulticlassClassification.MachineLearning.Common;
 
 public interface ITrainerBase
 {

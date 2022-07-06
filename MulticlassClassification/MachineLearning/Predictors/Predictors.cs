@@ -1,3 +1,4 @@
+using MulticlassClassification.MachineLearning.Common;
 using MulticlassClassification.MachineLearning.DataModels;
 
 namespace MulticlassClassification.MachineLearning.Predictors;
