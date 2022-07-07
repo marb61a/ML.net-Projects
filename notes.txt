@@ -327,6 +327,19 @@ Multiclass Classification Project (Non-notebook)
         - In the multiclass classification it was mlContext.MulticlassClassification.Evaluate
         - very large parts of the project was the same except changing names to multiclass instead of binary
 
+
+Decision Trees
+    - https://en.wikipedia.org/wiki/Decision_tree_learning
+    - https://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/
+    - There are multiple algorithms available but CART is covered here
+    - Impurity is defined as a chance of being incorrect if you assign a label to an example at random  
+        - A node is pure if all training instances it applies to belong to the same class
+        - You therefore cannot makke a mistake when assigning a label to a random sample
+        - https://www.learndatasci.com/glossary/gini-impurity/
+
+Decision Tree Classification Notebooks
+    - 
+
 Troubleshooting
 Running C# code from CLI in VSCode
     - https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?pivots=dotnet-6-0
@@ -352,4 +365,3 @@ Naming Training files
 
 Copying files
     - Ensure that namespaces are changed and that datasets are the same !!!
-    
