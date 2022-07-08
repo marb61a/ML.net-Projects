@@ -338,7 +338,26 @@ Decision Trees
         - https://www.learndatasci.com/glossary/gini-impurity/
 
 Decision Tree Classification Notebooks
-    - 
+    - There are several decision tree classification algorithms supported by ML.NET
+        - Fast Tree which is an implementation of the MART algorithm which stands for Multiple Additive Regression Trees
+            - This algorithm has been known to deliver high prediction accuracy and is widely used
+            - MART is an ensemble model of boosted regression trees, which means using gradient boost for calculations
+            - It builds each regression tree in a stepwise fashion using a loss function to measure the error for each step which is corrected in the next
+            - In regression boosing builds a series of trees step wise and selects the optimal tree
+            - https://analyticsindiamag.com/a-beginners-guide-to-bayesian-additive-regression-trees/
+        - Fast Tree Tweedie
+            - This is at it's heart similar to Fast Tree but it uses a different gradient boosting algorithm
+        - GAM or Generative Additive Models are usually implemented with decision trees 
+            - It treats data as a set of linearly independent features
+            - https://en.wikipedia.org/wiki/Generalized_additive_model
+    - Needs the Microsoft.ML.FastTree library installed
+        -A lot of the notebook from the binary classification notbook can be reused
+    - When training the model the FastTree trainer is used and takes several parameters
+        - The first parameter is the number of leaves in this case it is set to 3
+        - The second parameter is the number of trees in this case it is also set to 3
+        - The third parameter is the learning rate which determines how fast a model learns
+            - https://en.wikipedia.org/wiki/Learning_rate
+    -
 
 Troubleshooting
 Running C# code from CLI in VSCode
