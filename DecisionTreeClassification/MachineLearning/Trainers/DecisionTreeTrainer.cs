@@ -1,6 +1,6 @@
 using DecisionTreeClassification.MachineLearning.Common;
 
-namespace DecisionTreesClassification.MachineLearning.Trainers;
+namespace DecisionTreeClassification.MachineLearning.Trainers;
 
 public class DecisionTreeTrainer: TrainerBase<CalibratedModelParametersBase<FastTreeBinaryModelParameters, PlattCalibrator>>
 {
