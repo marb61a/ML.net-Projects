@@ -5,3 +5,5 @@ global using System.Collections.Generic;
 global using System.Linq;
 global using Microsoft.ML.Trainers;
 global using Microsoft.ML.Transforms;
+global using Microsoft.ML.Calibrators;
+global using Microsoft.ML.Trainers.FastTree;

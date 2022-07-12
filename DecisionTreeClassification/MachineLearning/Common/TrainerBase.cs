@@ -17,7 +17,7 @@ public abstract class TrainerBase<TParameters>: ITrainerBase where TParameters: 
 
     protected TrainerBase()
     {
-        MlContext = new MLContext(11);
+        mlContext = new MLContext(11);
     }
 
     public void Fit(string trainingFileName)
@@ -39,13 +39,19 @@ public abstract class TrainerBase<TParameters>: ITrainerBase where TParameters: 
         return mlContext.BinaryClassification.EvaluateNonCalibrated(testSetTransform);
     }
 
-    privateEstimatorChain<NormalizingTransformer>BuildDataProcessingPipeline()
+    public void Save()
+    {
+        mlContext.Model.Save(_trainedModel, _dataSplit.TrainSet.Schema, ModelPath);
+    }
+
+
+    private EstimatorChain<NormalizingTransformer>BuildDataProcessingPipeline()
     {
         var dataProcessPipeline = mlContext.Transforms.Concatenate("Features",
                 nameof(PalmerPenguinsBinaryData.CulmenDepth),
                 nameof(PalmerPenguinsBinaryData.CulmenLength)
             )
-            .Append(MlContext.Transforms.NormalizeMinMax("Features", "Features"))
+            .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
             .AppendCacheCheckpoint(mlContext);
 
         return dataProcessPipeline;

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zxzXjW0jsnahQUzhTe2opA5+7+/Ogupve/8uwRosaXw6xCw8sD6Itx9sng4snz9VNm248I/dq7TN+w50k7Wb6w==",
+  "dgSpecHash": "0Y07KikJLbReWQF0wUzBfwgrjQhkLYQhw3EKH2Q+vDzsVEM0xXLxCuea8xTa5Xo7xaMK14en8xta/3bDjTbdrA==",
   "success": true,
   "projectFilePath": "C:\\Users\\marb6\\OneDrive\\Documents\\MLNetProjects\\DecisionTreeClassification\\DecisionTreeClassification.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\marb6\\.nuget\\packages\\microsoft.ml\\1.7.1\\microsoft.ml.1.7.1.nupkg.sha512",
     "C:\\Users\\marb6\\.nuget\\packages\\microsoft.ml.cpumath\\1.7.1\\microsoft.ml.cpumath.1.7.1.nupkg.sha512",
     "C:\\Users\\marb6\\.nuget\\packages\\microsoft.ml.dataview\\1.7.1\\microsoft.ml.dataview.1.7.1.nupkg.sha512",
+    "C:\\Users\\marb6\\.nuget\\packages\\microsoft.ml.fasttree\\1.7.1\\microsoft.ml.fasttree.1.7.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",

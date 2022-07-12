@@ -357,6 +357,14 @@ Decision Tree Classification Notebooks
         - The second parameter is the number of trees in this case it is also set to 3
         - The third parameter is the learning rate which determines how fast a model learns
             - https://en.wikipedia.org/wiki/Learning_rate
+
+Decision Tree Classification
+    - Again this follow the previous projects ways of doing things
+    - Start off by creating a new directory and creating a console project inside it
+    - There needs to be a separate install ation of the FastTree package
+        - dotnet add package Microsoft.ML.FastTree
+        - https://rubikscode.net/2021/04/26/machine-learning-with-ml-net-sentiment-analysis/
+        - https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.trainers.fasttree?view=ml-dotnet
     -
 
 Troubleshooting

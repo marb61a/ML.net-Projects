@@ -7,6 +7,6 @@ public class GamTrainer : TrainerBase<CalibratedModelParametersBase<GamBinaryMod
     public GamTrainer() : base()
     {
         Name = "GAM";
-        _model = MlContext.BinaryClassification.Trainers.Gam();
+        _model = mlContext.BinaryClassification.Trainers.Gam();
     }
 }
