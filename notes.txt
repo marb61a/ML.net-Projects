@@ -365,7 +365,15 @@ Decision Tree Classification
         - dotnet add package Microsoft.ML.FastTree
         - https://rubikscode.net/2021/04/26/machine-learning-with-ml-net-sentiment-analysis/
         - https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.trainers.fasttree?view=ml-dotnet
-    -
+
+Decision Tree Regression Notebook
+    - This will use the fasttree algorithm in the context of a regression problem
+    - Installation packages are the same as for classification
+    - Dataset used is the boston housing dataset
+    - This will be very similar to the LinearRegression project
+    - When normalizing the data the NormalizeLogMeanVariance normaliser is used
+        - https://towardsdatascience.com/how-to-differentiate-between-scaling-normalization-and-log-transformations-69873d365a94
+        
 
 Troubleshooting
 Running C# code from CLI in VSCode
