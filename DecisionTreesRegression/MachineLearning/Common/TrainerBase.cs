@@ -1,4 +1,4 @@
-using DecisionTreesRegression.DataModels;
+using DecisionTreesRegression.MachineLearning.DataModels;
 
 namespace DecisionTreesRegression.MachineLearning.Common
 {
