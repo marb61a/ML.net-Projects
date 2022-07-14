@@ -1,3 +1,5 @@
+using DecisionTreesRegression.DataModels;
+
 namespace DecisionTreesRegression.MachineLearning.Common
 {
     public abstract class TrainerBase<TParameters>: ITrainerBase
@@ -43,5 +45,36 @@ namespace DecisionTreesRegression.MachineLearning.Common
         {
             mlContext.Model.Save(_trainedModel, _dataSplit.TrainSet.Schema, ModelPath);
         }
+
+        // Data processing pipeline
+        private EstimatorChain<NormalizingTransformer> BuildDataProcessingPipeline()
+        {
+            var dataProcessPipeline = mlContext.Transforms.CopyColumns("Label", nameof(BostonHousingData.MedianPrice))
+                .Append(mlContext.Transforms.Categorical.OneHotEncoding("RiverCoast"))
+                .Append(mlContext.Transforms.Concatenate("Features",
+                                                "CrimeRate",
+                                                "Zoned",
+                                                "Proportion",
+                                                "RiverCoast",
+                                                "NOConcetration",
+                                                "NumOfRoomsPerDwelling",
+                                                "Age",
+                                                "EmployCenterDistance",
+                                                "HighwayAccecabilityRadius",
+                                                "TaxRate",
+                                                "PTRatio",
+                                                "MedianPrice"))
+                .Append(mlContext.Transforms.NormalizeLogMeanVariance("Features", "Features"))
+                .AppendCacheCheckpoint(mlContext);
+
+            return dataProcessPipeline;
+        }
+
+         private DataOperationsCatalog.TrainTestData LoadAndPrepareData(string trainingFileName)
+        {
+            var trainingDataView = mlContext.Data.LoadFromTextFile<BostonHousingData>(trainingFileName, hasHeader: true, separatorChar: ',');
+            return mlContext.Data.TrainTestSplit(trainingDataView, testFraction: 0.3);
+        }
+
     }
 }
