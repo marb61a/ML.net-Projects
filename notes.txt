@@ -328,7 +328,10 @@ Multiclass Classification Project (Non-notebook)
         - very large parts of the project was the same except changing names to multiclass instead of binary
 
 
-Decision Trees
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                DECISION TREES
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
     - https://en.wikipedia.org/wiki/Decision_tree_learning
     - https://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/
     - There are multiple algorithms available but CART is covered here
@@ -373,9 +376,31 @@ Decision Tree Regression Notebook
     - This will be very similar to the LinearRegression project
     - When normalizing the data the NormalizeLogMeanVariance normaliser is used
         - https://towardsdatascience.com/how-to-differentiate-between-scaling-normalization-and-log-transformations-69873d365a94
-        
+    - Increasing the number of trees when training the model will impace on the final prediction
+        - 18.5 with 3 trees compared to 27.98 for 10 trees 
 
-Troubleshooting
+Decision Tree Regression
+    - This will use the fasttree algorithm in the context of a regression problem
+    - The FastTree package will need to be installed separately in the project
+    - The boston house prices dataset will be used
+    - One of the trainer files uses the FastTree Tweedie algorithm
+    - Again had to rename the training file by adding a u to indicate user made
+        - This is to prevent any errors due to ambiguity where file names are the same as library file names
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    RANDOM FOREST
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
+    - Ensemble Learning
+        - Sometimes in ML better results can be gotten by using multiple predictors and averaging results rathre than one algorithm
+        - Using multiple algorithms is referred to as ensemble learning
+        - https://machinelearningmastery.com/tour-of-ensemble-learning-algorithms/
+        - https://towardsdatascience.com/ensemble-methods-in-machine-learning-what-are-they-and-why-use-them-68ec3f9fef5f
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    TROUBLESHOOTING
+--------------------------------------------------------------------------------------------------------------------------------------------------
 Running C# code from CLI in VSCode
     - https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?pivots=dotnet-6-0
     - https://www.youtube.com/watch?v=CO4BGZOuUkM&t=435s
@@ -400,3 +425,8 @@ Naming Training files
 
 Copying files
     - Ensure that namespaces are changed and that datasets are the same !!!
+
+Moving Files
+    - Moving files in VSCode may cause issues in projects
+    - It maybe better to copy the code and create a new file in the necessary folder
+    
