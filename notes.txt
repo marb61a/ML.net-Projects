@@ -135,8 +135,12 @@ How does ML.NET fit
     - ML.NEt performance on the GPU is not as good as Pytorch
     - Data Preprocession can be complicated
     - There not that many tools for data visualisation
-    
-Intuition to Linear Regression
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                LINEAR REGRESSION
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
     - https://machinelearningmastery.com/linear-regression-for-machine-learning/
     - The output of solving a regression problem is a continuous numerical value
         - One of the most famous is predicting the price of a house based on tenants ages which are independent variables
@@ -222,7 +226,11 @@ Using C# Notebooks in VSCode
         - After the model has been loaded then the prediction engine needs to be created once again using methods from the model catalogue
         - Once the prediction engine has been put in place it can then be used with the prediction method and the new sample for a prediction
 
-Classification
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                CLASSIFICATION
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
     - https://towardsdatascience.com/machine-learning-classifiers-a5cc4e1b0623
     - The section will cover both binary and multiclass classification using both notebooks and normal projects
     - Classification algorithms build decision boundaries implicitly or explicitly
@@ -393,10 +401,30 @@ Decision Tree Regression
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Intuition
     - Ensemble Learning
-        - Sometimes in ML better results can be gotten by using multiple predictors and averaging results rathre than one algorithm
+        - Sometimes in ML better results can be gotten by using multiple predictors and averaging results rather than one algorithm
         - Using multiple algorithms is referred to as ensemble learning
         - https://machinelearningmastery.com/tour-of-ensemble-learning-algorithms/
         - https://towardsdatascience.com/ensemble-methods-in-machine-learning-what-are-they-and-why-use-them-68ec3f9fef5f
+        - Ensemble Learning is based on the law of large numbers
+            - https://en.wikipedia.org/wiki/Law_of_large_numbers
+    - Hard Voting
+        - Hard Voting is a type of ensemble learning
+        - https://en.wikipedia.org/wiki/Law_of_large_numbers
+        - If we take several classifiers voting for a class, the class that gets the majority of votes is the output
+        - An ensemble containing 1000 classifiers, each has 51% accuracy alone, using ensemble hard voting can have accuracy of 75%
+    - Soft Voting
+        - Each of the algorithms will output a probability
+        - The ensemble will predict the class with the highest class probability averaged over each of the classifiers
+    - Bagging and Pasting
+        - https://medium.com/@silvaan/ensemble-methods-bagging-and-pasting-in-scikit-learn-723f4183cdf4
+        - This is where the same algorithm is used on different subsets of the training dataset
+        - It is one of the most popular ways to build ensembles
+        - There is only one major difference between bagging and pasting
+            - Bagging allows training instances to be sampled several times for the same predictor where pasting does not
+        - When all algorithms are trained the ensemble makes a prediction by aggregating the predictions of all algorithms
+    - Feature Bagging
+        - This is where during training each tree is trained on a subset of features
+        - This in turn will lead to lower variance of the complete model
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
