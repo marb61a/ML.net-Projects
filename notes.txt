@@ -426,6 +426,18 @@ Intuition
         - This is where during training each tree is trained on a subset of features
         - This in turn will lead to lower variance of the complete model
 
+Random Forest Notebook
+    - This will cover Random Forest algorithms for classification
+    - ML.NET supports Random Forest for both regression and classification
+    - Random Forest classification is limited to binary classification
+    - The Random Forest algorithm is called Fast Forest and is an ensemble build of Fast Tree
+    - This n will reuse the penguins binary dataset
+    - When training the model using FastForest there is no Learning_rate specified
+
+Random Forest Classification Project
+    - Again this will be a command line project using the DOTNET cli
+    - 
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
 --------------------------------------------------------------------------------------------------------------------------------------------------
