@@ -1,6 +1,6 @@
 using RandomForestClassification.MachineLearning.DataModels;
 
-namespace RandomForestClassification.MachineLearning.Predictor
+namespace RandomForestClassification.MachineLearning.Predictors
 {
     public class Predictor
     {
