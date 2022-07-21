@@ -6,7 +6,7 @@ namespace RandomForestRegression.MachineLearning.Common
         where TParameters: class
     {
         public string Name { get; protected set; }
-        protected static string ModelPath => Path.Combine(AppContext.BaseDirectory, "regression.mdl");
+        protected static string ModelPath => Path.Combine(AppContext.BaseDirectory, "randomforestregression.mdl");
 
         protected readonly MLContext mlContext;
 
