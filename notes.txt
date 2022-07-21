@@ -426,7 +426,7 @@ Intuition
         - This is where during training each tree is trained on a subset of features
         - This in turn will lead to lower variance of the complete model
 
-Random Forest Notebook
+Random Forest Classification Notebook
     - This will cover Random Forest algorithms for classification
     - ML.NET supports Random Forest for both regression and classification
     - Random Forest classification is limited to binary classification
@@ -436,6 +436,24 @@ Random Forest Notebook
 
 Random Forest Classification Project
     - Again this will be a command line project using the DOTNET cli
+    - The dataset being used will be the penguis binary dataset
+    - The only trainer will be a Random Forest trainer file
+
+Random Forest Regression Notebook
+    - This time Random Forest will be assed for regression purposes
+    - The Boston housing dataset will be used
+    - When training the number of leaves is set to 30 and number of trees to 100
+    - Once again with FastForest a learning rate is not needed
+
+Random Forest Regression Project
+    - Using the Boston housing dataset
+    - Similar to both the classification project and other regression projects
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    SUPPORT VECTOR MACHINE
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
     - 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
