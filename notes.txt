@@ -454,6 +454,26 @@ Random Forest Regression Project
                                                     SUPPORT VECTOR MACHINE
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Intuition
+    - https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47
+    - SVM is one of the most popular ML algorithms
+    - SVM observes every feature vecor as a point in a high dimensional space
+    - It puts all feature vectors on an imaginary n-dimensional plot
+    - It then draws an imaginary n-dimensionl line called a hyperplane
+    - This separates examples with positive labels from negative labelled examples when dealing with classification
+    - When dealing with regression it collects as much sampling as possible
+        - https://towardsdatascience.com/unlocking-the-true-power-of-support-vector-regression-847fd123a4a0
+    - SVM does not only create a hyperplane
+        - There are also additional vectors constructed which define the margin
+        - These vectors are called support vectors and the difference between the 2 closest classes is called the margin
+        - Hyperplanes with support vectors is often called street
+        - https://towardsdatascience.com/support-vector-machine-simply-explained-fee28eba5496
+    - Kernel trick
+        - This technique gives you the possibility to get the same result as if polynomial features were being used without using them
+        - Kernels are just functions that map low-dimensional non-linearly seperable data into the opposite (high-dimensional linearly-separable data)
+        - One example is mapping 2d non-linearly separable data into 3d separable data
+    -
+
+Support Vector Machine Notebook
     - 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
