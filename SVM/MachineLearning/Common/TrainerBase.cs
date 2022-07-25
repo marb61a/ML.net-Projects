@@ -6,7 +6,7 @@ namespace SVM.MachineLearning.Common
     {
         public string Name { get; set; }
 
-        public static string ModelPath => Path.Combine(AppContext.BaseDirectory, "svmclassification.mbl");
+        public static string ModelPath => Path.Combine(AppContext.BaseDirectory, "svmclassification.mdl");
         protected readonly MLContext mlContext;
 
         protected DataOperationsCatalog.TrainTestData _dataSplit;
