@@ -471,9 +471,28 @@ Intuition
         - This technique gives you the possibility to get the same result as if polynomial features were being used without using them
         - Kernels are just functions that map low-dimensional non-linearly seperable data into the opposite (high-dimensional linearly-separable data)
         - One example is mapping 2d non-linearly separable data into 3d separable data
-    -
+        - https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f
 
 Support Vector Machine Notebook
+    - Linear SVM
+        - This is an ML.NET implementation of the PEGASOS algorithm
+        - https://qiskit.org/documentation/machine-learning/tutorials/07_pegasos_qsvc.html
+    - Local Deep SVM   
+        - This implementation is a generalisation of Localised Multiple Kernel Learning for non-linear SVM
+        - LD-SVM speeds sup non-linear SVM which tend to be slower
+        - Non-linear SVM uses kernel learning
+
+Support Vector Machine Project
+    - Again this will be a cli project
+    - It will be a classification project
+    - The architecture will be the same as other project folders
+    - The trainers in this project will be both LinearSVM and LdSVM
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    CLUSTERING
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
     - 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
