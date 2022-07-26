@@ -513,8 +513,31 @@ Intuition
         - An average cluster feature vector is calculated for samples that are assigned to it
         - The previous steps are repeated for either a fixed number of iterations or until the centroids don't change
     - Elbow Method
-        -
-    -
+        - https://www.geeksforgeeks.org/elbow-method-for-optimal-value-of-k-in-kmeans/
+        - This method is built on 2 metrics distortion and inertia
+        - Distortion is calculated as the average of squared distances which can be Eucalidean distances from the cluster centres
+        - Inertia on the other hand represents the sum of the squared distances of samples from the center of the closest cluster
+        - The 'elbow' point is the after which distortion and inertia begin to decrease in linear fashion as cluster numbers grow
+            - This point is the optimal number of clusters
+    - Hierarchical Clustering
+        - Each hierarchical clustering method begins by putting all samples into separate single sample clusters
+        - After this based on similarity metrics clusters are merged together until the point where all clusters have become a single cluster
+    - Agglomerative Clustering
+        - Every point is stored in it's own cluster
+        - The proximity matrix is then calculated
+        - Closest points are then detected and merged, these are the cluster and the centroid is calculated
+        - The proximity cluster is then updated using the centroid of the cluster that was created
+        - The last 2 steps are repeated until there is 1 cluster created
+    - DBSCAN
+        - DBSCAN is not like the other clustering algorithms as it is density based
+        - This means that there is not need to determine how many clusters are needed
+        - There are 2 parameters defined, the distance and the number of samples per cluster
+        - There are advantages to this approach as clusters have different shapes
+            - Centroid based algorithms always create clusters that have the shape of a hypersphere
+        - There is an optimised version of this algorithm called HDBSCAN
+
+Clustering Notebook
+    - 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
