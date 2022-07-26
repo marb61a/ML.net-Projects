@@ -492,8 +492,29 @@ Support Vector Machine Project
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     CLUSTERING
 --------------------------------------------------------------------------------------------------------------------------------------------------
+This lesson is where the shift away from supervised learning begins
+    - There will be 3 clustering algorithms covered,  K-Means Clustering, Agglomerative Clustering and DBSCAN
 Intuition
-    - 
+    - Unsupervised Learning
+        - In real life there is only input data available
+        - This means that the algorithms that we use need to figure out any connections between input samples
+        - This is where unsupervised learning comes in
+        - Supervised learning can solve regression and classification problems but unsupervised learning solves clustering problems
+    - Clustering
+        - This is a technique that tries to identify similat inputs in data and then puts them into clusters or categories
+        - The goal is to find hidden patterns in data
+    - K-Means Clustering
+        - https://towardsdatascience.com/understanding-k-means-clustering-in-machine-learning-6a6e67336aa1
+        - Firstly the hyperparameter k is set, it represents the number of clusters that K-Means Clustering will create once done
+        - K random vectors (also called centroids) are picked in the feature space, they are changed during the training process
+            - The goal is to put the into the centre of each clustering
+        - The distance from each input sample x to each centroid c is calculated using some metric
+            - This is usually Eucalidean distance, the closest centroidis assigned to each sample in the dataset and clusters are created
+        - An average cluster feature vector is calculated for samples that are assigned to it
+        - The previous steps are repeated for either a fixed number of iterations or until the centroids don't change
+    - Elbow Method
+        -
+    -
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
