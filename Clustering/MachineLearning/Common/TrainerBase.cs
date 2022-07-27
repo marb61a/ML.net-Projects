@@ -51,8 +51,8 @@ namespace Clustering.MachineLearning.Common
         private EstimatorChain<ColumnConcatenatingTransformer>BuildDataProcessingPipeline()
         {
             var dataProcessPipeline = mlContext.Transforms.Text.FeaturizeText(inputColumnName: "Sex", outputColumnName: "SexFeaturized")
-                .Append(MlContext.Transforms.Text.FeaturizeText(inputColumnName: "Island", outputColumnName: "IslandFeaturized"))
-                .Append(MlContext.Transforms.Concatenate(
+                .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName: "Island", outputColumnName: "IslandFeaturized"))
+                .Append(mlContext.Transforms.Concatenate(
                     "Features",
                     "IslandFeaturized",
                     nameof(PalmerPenguinsData.CulmenLength),
