@@ -537,7 +537,27 @@ Intuition
         - There is an optimised version of this algorithm called HDBSCAN
 
 Clustering Notebook
-    - 
+    - Kmeans is the ML.NET implementation of K-Means Clustering
+    - Penguins size is the dataset being used
+
+Clustering Project
+    - Again generate a cli project using dotnet
+        - Also install the usual tools
+    - The architecture is the same as other projects
+        - A single trainer KMeans is used
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    AUTOML
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
+    - AutoML is the process of automating the end to end process of applying machine learning 
+    - https://www.automl.org/automl/
+    - https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml
+
+Model Builder
+    - This is a visual studio extension
+    - https://dotnet.microsoft.com/en-us/apps/machinelearning-ai/ml-dotnet/model-builder
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
