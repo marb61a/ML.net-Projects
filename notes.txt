@@ -559,6 +559,29 @@ Model Builder
     - This is a visual studio extension
     - https://dotnet.microsoft.com/en-us/apps/machinelearning-ai/ml-dotnet/model-builder
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    RECOMMENDATION SYSTEMS
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
+    - Recommendation Systems are used in lots of places
+    - This type of system is one of the most successful applications in Machine Learning
+    - They provide businesses with the ability to predict what users would like to buy, read etc
+    - Users also benefit as they gain from increased product ranges to explore
+    - Another benefit for businesses is increased user engagement.
+    - There are different types of recommendation system
+Content Based Systems
+    - These systems collect data and present it tabularly and are item based
+    - They calculate the similarity between items, other things can be calculated if required
+    - Then a matrix list of items is created
+    - The list is then sorted by similarity and the Top-N neighbours is picked
+        -These will be items that highest similarity with users purchases
+        - There may be a minimum similarity threshold used to avoid obscure recommendations
+    - Items that have not been consumed by users
+        - These are then weighted and ratings are normalised
+Collaborative Filtering
+    -
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
 --------------------------------------------------------------------------------------------------------------------------------------------------
