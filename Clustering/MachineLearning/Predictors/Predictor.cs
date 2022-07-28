@@ -1,6 +1,6 @@
 using Clustering.MachineLearning.DataModels;
 
-namespace SVM.MachineLearning.Predictors
+namespace Clustering.MachineLearning.Predictors
 {
     public class Predictor{
         protected static string ModelPath => Path.Combine(AppContext.BaseDirectory, "clustering.mdl");
