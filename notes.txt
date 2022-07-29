@@ -570,6 +570,8 @@ Intuition
     - Users also benefit as they gain from increased product ranges to explore
     - Another benefit for businesses is increased user engagement.
     - There are different types of recommendation system
+    - https://towardsdatascience.com/recommendation-system-part-1-use-of-collaborative-filtering-and-hybrid-collaborative-content-in-6137ba64ad58
+    - https://towardsdatascience.com/recommendation-system-matrix-factorization-d61978660b4b
 Content Based Systems
     - These systems collect data and present it tabularly and are item based
     - They calculate the similarity between items, other things can be calculated if required
@@ -580,7 +582,27 @@ Content Based Systems
     - Items that have not been consumed by users
         - These are then weighted and ratings are normalised
 Collaborative Filtering
-    -
+    -These also collect data and present it in tabular form
+        - Values for users and items are used (Ratings or consumption can be booleans)
+    - Each user is represented as a multidimensional array
+        - Similarity is calculated using only items that they have in common
+    - A similarity matrix is then created, it must be born in mind though that if similarity is set to 1 does not necessarily mean that both users liked an item
+        - They could have both just as easily disliked the same item equally
+        - When data is sparse this can also distort to show 100% similarity
+        - It may be a good idea to use a minimum threshold of shared items
+    - The similarity list is then sorted and the top-N neighbours are picked
+        - This means users have the most similarity with the selected items and a minimum similarity threshold
+    - Then pick items that the selected users have not consumed 
+        - This will be compared against a list of items that other similar users have liked
+        - Suggest what other users have liked never what they hated
+        - This is then weighted with the similarity score between users
+Knowledge Based    
+    - This sysyem uses explicit knowledge of a users prefernces or recommendation criteria
+Hybrid
+    - This is a system which incorporates parts from the 3 types of system listed above
+
+Recommendation Systems Notebook
+    - 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
