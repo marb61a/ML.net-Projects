@@ -602,7 +602,9 @@ Hybrid
     - This is a system which incorporates parts from the 3 types of system listed above
 
 Recommendation Systems Notebook
-    - 
+    - This will use a Netflix Prize dataset from Kaggle
+    - There are several million records in the original so only a smaller sample is used
+    - ML.Recommender will need to be installed
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
