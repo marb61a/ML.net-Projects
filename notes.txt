@@ -629,7 +629,27 @@ Recommendation Systems ModelBuilder Project
                                                     IMAGE CLASSIFICATION
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Intuition
+    - Image Classification is one of the most common computer vision problems
+        - https://viso.ai/computer-vision/image-classification/
+    - It is as the name suggests a classification problem
+    - It differs from previous problems as images will be used as inputs
+    - The goal remains the same, namely finding which class an input belongs to
+    - Imagenet is the king of computer vision datasets
+        - https://www.image-net.org/
+        - This dataset is the benchmark and is used for new deep learning and computer vision breakthroughs
+        - The world of deep learning would be different without it such is it's impact in shaping the world
+        - It is a large image database organized using a WordNet hierarchy
+            - https://wordnet.princeton.edu/
+            - https://www.pythonstudio.us/language-processing/the-wordnet-hierarchy.html
+            - This means that each image is described with a set of words and phrases called synset
+        - For each synset approximately 1000 images is assigned
+Neural Networks and Convolutional Neural Networks Intuition
+    - https://www.ibm.com/cloud/learn/neural-networks
     - 
+
+Image Classification Project
+    -
+    
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
 --------------------------------------------------------------------------------------------------------------------------------------------------
