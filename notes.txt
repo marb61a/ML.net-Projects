@@ -605,7 +605,31 @@ Recommendation Systems Notebook
     - This will use a Netflix Prize dataset from Kaggle
     - There are several million records in the original so only a smaller sample is used
     - ML.Recommender will need to be installed
+    - There is no need to use ToTabularDataResource to look at the various parts of the dataset
+    - When creating the model the Recommendation trainer is used with Matrix factorisation
+        - This takes several different parameters
+        - labelColumnName for the label, learningRate, numberOfIterations for how many iterations will be used
+        - matrixColumnIndexColumnName, matrixRowIndexColumnName
 
+Recommendation Systems Project
+    - This will be the same as other projects
+    - Microsoft ML.Recommender will need to be installed, there is no need to install FastTree
+    - MatrixFactorization will be the trainer that is used
+
+Recommendation Systems ModelBuilder Project
+    - https://dotnet.microsoft.com/en-us/apps/machinelearning-ai/ml-dotnet/model-builder
+    - This will use the Visual Studio extension to build models without coding
+        - Simply add a Machine Learning model to a project by creating a folder and right clicking and add Machine Learning model 
+        - Once the mbconfig file has been created the window will show a number of options for adding a datset and performing predictions
+        - There are numerous options available for running predictions
+    - There is also an extension for VSCode in preview stage
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    IMAGE CLASSIFICATION
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
+    - 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
 --------------------------------------------------------------------------------------------------------------------------------------------------
