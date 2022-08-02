@@ -645,9 +645,25 @@ Intuition
         - For each synset approximately 1000 images is assigned
 Neural Networks and Convolutional Neural Networks Intuition
     - https://www.ibm.com/cloud/learn/neural-networks
-    - 
-
+    - Previous projects have used shallow algorithms
+        - They are called shallow because they learn model parameters directly from the features
+    - https://towardsdatascience.com/machine-learning-for-beginners-an-introduction-to-neural-networks-d49f22d238f9
+Popular Image Classification Models
+    - There are several architectures that won the ImageNet competition that became popular
+        - Some of them are: VGG16, GoogLeNet (Inception), ResNet
+    - These architectures are not only popular for transfer learning, some are used because they are easy to train
+        - https://towardsdatascience.com/step-by-step-vgg16-implementation-in-keras-for-beginners-a833c686ae6c
+        - https://www.analyticsvidhya.com/blog/2018/10/understanding-inception-network-from-scratch/
+        - https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8
+Transfer Learning
+    - Training large models is computationally expensive, most people will not have the necessary equipment
+    - Models can be trained in the clud but again will need large resources
+    - This is where pre-trained models come in, this is simply a saved network that was trained on a large dataset
+        - This can be used straight out of the box or fine-tuned
+        - These large datasets are usually used for a larger more global solution, the model can be customised for a specific problem
+        - This allows for using neural networks without using too many resources 
 Image Classification Project
+    - This project will use the Kaggle dataset for Dogs vs Cats
     -
     
 --------------------------------------------------------------------------------------------------------------------------------------------------
