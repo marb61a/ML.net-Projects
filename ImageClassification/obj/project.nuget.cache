@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IXSu3Yo7g+2QijI/cCU8Rq2xkIapBmyLQOysdqGgwpFgsaigEvb6jttLbPU74nkQKBw2IRDbo1stXohpBFEfHw==",
+  "dgSpecHash": "nsP6BzaQBU9eJPeo+5+1reIh1lEbu+wqhMox6UyeLqQgvrTr6D1pPxbkpu9pSjrB67T/mSYdEzuHao2zEmlxPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\marb6\\OneDrive\\Documents\\MLNetProjects\\ImageClassification\\ImageClassification.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marb6\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
+    "C:\\Users\\marb6\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\marb6\\.nuget\\packages\\microsoft.ml\\1.7.1\\microsoft.ml.1.7.1.nupkg.sha512",
     "C:\\Users\\marb6\\.nuget\\packages\\microsoft.ml.cpumath\\1.7.1\\microsoft.ml.cpumath.1.7.1.nupkg.sha512",
