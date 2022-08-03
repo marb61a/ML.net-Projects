@@ -20,5 +20,29 @@ namespace ImageClassification.MachineLearning
             LoadAndPrepareData(dataProcessPipeline);
         }
         
+        private EstimatorChain<ImageLoadingTransformer> BuildDataProcessingPipeline()
+        {
+            var dataProcessPipeline = _mlContext.Transforms.Conversion.MapValueToKey(
+                inputColumnName: "Label",
+                outputColumnName: "LabelAsKey"
+            )
+            .Append(_mlContext.Transforms.LoadRawImageBytes(
+                outputColumnName: "Image",
+                imageFolder: _trainingFolder,
+                inputColumnName: "ImagePath"
+            ));
+
+            return dataProcessPipeline;
+        }
+
+        private void LoadAndPrepareData(EstimatorChain<ImageLoadingTransformer> dataProcessPipeline)
+        {
+            IEnumerable<ImageData> images = LoadImages(_trainingFolder);
+        }
+
+        private IEnumerable<ImageData> LoadImages(string trainingFolder)
+        {
+            
+        }
     }
 }
