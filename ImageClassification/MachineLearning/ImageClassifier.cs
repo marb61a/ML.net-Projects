@@ -23,5 +23,32 @@ namespace ImageClassification.MachineLearning
             _trainedModel = trainingPipeline.Fit(_dataLoader.TrainSet);
         }
 
+        // Save the model to file
+        public void Save()
+        {
+            _mlContext.Model.Save(_trainedModel, _dataLoader.TrainSet.Schema, ModelPath);
+        }
+
+        // Build the training pipeline
+        private EstimatorChain<KeyToValueMappingTransformer> BuildTrainingPipeline()
+        {
+            var classifierOptions = new ImageClassificationTrainer.Options()
+            {
+                FeatureColumnName = "Image",
+                LabelColumnName = "LabelAsKey",
+                ValidationSet = _dataLoader.ValidationSet,
+                Arch = _architecture,
+                MetricsCallback = (metrics) => Console.WriteLine(metrics),
+                TestOnTrainSet = false,
+                ReuseTrainSetBottleneckCachedValues = true,
+                ReuseValidationSetBottleneckCachedValues = true,
+                Epoch = 20
+            };
+
+            return _mlContext.MulticlassClassification
+                .Trainers
+                .ImageClassification(classifierOptions)
+                .Append(_mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+        }
     }
 }
