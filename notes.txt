@@ -680,7 +680,31 @@ Image Classification Project
                                                     OBJECT DETECTION
 --------------------------------------------------------------------------------------------------------------------------------------------------
 Intuition
-    -
+    - Object detection is a more complex problem than Image Classification
+        - The output of an object detection solution is not just the class to which the object belongs
+        - Object Detection systems are able to detect where an object is in an image and draw a bounding box around it.
+        - They do also provide predictions on the class of an object
+    - YOLO -- You Only Look Once
+        - https://towardsdatascience.com/how-to-train-a-custom-object-detection-model-with-yolo-v5-917e9ce13208
+        - YOLO is a Convolutional Network the simultaneously predicts multiple bounding boxes and the probabilities of the classes of these boxes
+        - YOLO is based on regression instead of selecting a particular part of an image
+        - It predicts classes and bounding boxes in one run
+        - Using YOLO the input image is divided into a grid measuring S x S
+        - If the object is at the centre of the grid cell then that particular grid cell should detect the object
+        - This is done by predicting B number of bounding boxes and confidence that it is within that grid cell
+        - Each bounding box is defined as a Tuple containing x, y, w, h, confidence
+            - w, h are width and height while x and y are the coordinates of the centre
+YOLO History
+    - The above shows how the core principles of how YOLO work
+    - This first version is extended over the years with new concepts and changes in the architecture
+    - Core Principles remain but each version bought improvements
+    - YOLO v2
+        - This version introduced many features for which YOLO is known and loved
+        - It brought performance improvements, introduced anchors and multi-scale training
+        - The architecture is trained on a combination of ImageNet and COCO dataset so it is able to recognize 9000 classes of objects
+        - The most noticeable change however is the introduction of Anchor boxes
+    - YOLO v3
+        -
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
