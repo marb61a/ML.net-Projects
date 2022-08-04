@@ -664,8 +664,24 @@ Transfer Learning
         - This allows for using neural networks without using too many resources 
 Image Classification Project
     - This project will use the Kaggle dataset for Dogs vs Cats
+        - https://www.kaggle.com/competitions/dogs-vs-cats/data
+    - ML.NET does not provide a way to build Neural Networks or Convolutional Neural Networks
+    - It also does not provide popular algorithms
+    - Tensorflow will be used, the .NET implementation to be more precise
+        - https://github.com/SciSharp/TensorFlow.NET
+    - There are some differences when installing from the cli rather than using Visual Studio
+        - https://www.nuget.org/packages/TensorFlow.NET
+    - The rest of the project is similar to previous projects
+        - There is a predictor file
+        - There is however no need for a trainer file as this will be done using a data loader and classifier file
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    OBJECT DETECTION
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Intuition
     -
-    
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
 --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -697,4 +713,8 @@ Copying files
 Moving Files
     - Moving files in VSCode may cause issues in projects
     - It maybe better to copy the code and create a new file in the necessary folder
+
+Gitignore Files
+    - https://www.pluralsight.com/guides/how-to-use-gitignore-file
+    - https://github.com/github/gitignore
     
