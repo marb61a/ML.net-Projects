@@ -703,8 +703,33 @@ YOLO History
         - It brought performance improvements, introduced anchors and multi-scale training
         - The architecture is trained on a combination of ImageNet and COCO dataset so it is able to recognize 9000 classes of objects
         - The most noticeable change however is the introduction of Anchor boxes
+        - Older concepts like Faster R-CNN used the concept of pre-given anchor boxes to predict bounding boxes for objects
+            - This essentially means that the regression used by YOLO v1 was not used
+        - Instead 3 different scales and 3 different aspect ratios were used to predict offsets for the pre-given anchor boxes.
+            - Boxes were then predicted using that offset
+        - This way the algorithm needs to learn offset and selected size, and it doesn’t need to learn coordinates and dimensions of the bounding box
+        - YOLO v2 goes further it does not use predefined anchor boxes, instead it uses bounding boxes of training data
+        - K-Means Clustering is then ran on them which then picks a set of dimension clusters that are applicable
+        - In YOLO v2 multi-scale has been introduced
+            - This means that the network is randomly resized during the training process in the multiples of 32
+            - This has had a positive effect on the performance of YOLO v2
+        - WordTree was also introduced which is a specially tailored dataset using a combination of COCO and ImageNet
+            - Combining these two datasets together, a tree structure is implemented with hierarchies like wordnet
+            - Instead of having a single SoftMax deciding which class is in the image, the whole tree is used
     - YOLO v3
-        -
+        - Under this version YOLO became the most popular architecture for object detection
+        - It mainly focused on improving existing concepts
+            - YOLOv3 predicts 10x more bounding boxes than YOLOv2 in 3 different scales
+            - Instead of SoftMax YOLOv3  uses independent logistic classifiers with binary cross-entropy loss
+            - YOLOv3 uses a new convolutional neural network with 53 layers (Darknet-53) for feature extraction
+    YOLO v4 and 5
+        - YOLO v4 is a fork of the original project due to work being stopped by the original author
+        - This version introduces two terms Bag of freebies (BOF) and Bag of specials (BOS)
+            - Bag of freebies refers to the methods that affect training strategy
+                - One such method is data augmentation, which is used to increase the variability of the input images and make the model has higher robustness
+            - Bag of specials is post-processing modules and methods that do increase the inference cost but improve the accuracy of object detection as well
+        - YOLO v5 is a completely different version than predecessors
+            - It uses a PyTorch implementation rather than the original Darknet architecture
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
