@@ -62,6 +62,10 @@
             "Microsoft.ML.OnnxTransformer": {
               "target": "Package",
               "version": "[1.7.1, )"
+            },
+            "Microsoft.ML.Vision": {
+              "target": "Package",
+              "version": "[1.7.1, )"
             }
           },
           "imports": [
