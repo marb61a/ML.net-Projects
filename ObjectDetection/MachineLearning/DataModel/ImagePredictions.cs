@@ -26,5 +26,32 @@ namespace ObjectDetection.MachineLearning.DataModel
         [VectorType(1, 52, 52, 3, 85)]
         [ColumnName("Identity:0")]
         public float [] Identity { get; set; }
+
+        [VectorType(1, 26, 26, 3, 85)]
+        [ColumnName("Identity_1:0")]
+        public float [] Identity1 { get; set; }
+
+        [VectorType(1, 13, 13, 3, 85)]
+        [ColumnName("Identity_2:0")]
+        public float [] Identity2 { get; set; }
+
+        [ColumnName("width")]
+        public float ImageWidth { get; set; }
+
+        [ColumnName("height")]
+        public float ImageHeight { get; set; }
+
+        public IReadOnlyList<Result> GetResults(string[] categories)
+        {
+            // Applies non-max suppression and returns a list of results
+        }
+
+        // Covers postprocess_bbbox
+        // https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/yolov4#postprocessing-steps
+        private List<float[]> PostProcessBoundingBoxes(float[][] results, int classesCount)
+        {
+            List<float> postProcessedResults = new List<float>();
+            
+        }
     }
 }
