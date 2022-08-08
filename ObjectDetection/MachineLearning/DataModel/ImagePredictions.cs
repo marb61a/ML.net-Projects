@@ -43,7 +43,8 @@ namespace ObjectDetection.MachineLearning.DataModel
 
         public IReadOnlyList<Result> GetResults(string[] categories)
         {
-            // Returns a list of results after non-max suppression applied
+            var postProcesssedBoundingBoxes = PostProcessBoundingBoxes(new[] { Identity, Identity1, Identity2 }, categories.Length);
+            return NMS(postProcesssedBoundingBoxes, categories);
         }
 
         // Covers postprocess_bbbox
@@ -125,6 +126,49 @@ namespace ObjectDetection.MachineLearning.DataModel
             }
 
             return postProcessedResults;
+        }
+
+        // Performs the Non-Max suppression and returns
+        private List<IAsyncResult> NMS(List<float[] postProcesssedBoundingBoxes, string [] categories>)
+        {
+            postProcessBoundingBoxes = postProcessBoundingBoxes.OrderByDescending(x => x[4]).ToList();
+            var resultsNms = new List<Result>();
+
+            int counter = 0;
+            while(counter < PostProcessBoundingBoxes.Count)
+            {
+                var result = postProcesssedBoundingBoxes[counter];
+                if(result == null)
+                {
+                    counter++;
+                    continue;
+                }
+
+                var confidence = result[4];
+                string label = categories[(int)result[5]];
+
+                resultsNms.Add(new Result(result.Take(4).ToArray(), label, confidence));
+
+                postProcesssedBoundingBoxes[counter] = null;
+
+                var iou = postProcesssedBoundingBoxes.Select(bbox => bbox == null ? float.NaN : BoxIoU(result, bbox)).ToList();
+
+                for (int i = 0; i < iou.Count; i++)
+                {
+                    if (float.IsNaN(iou[i]))
+                    {
+                        continue;
+                    }
+
+                    if (iou[i] > _iouThreshold)
+                    {
+                        postProcesssedBoundingBoxes[i] = null;
+                    }
+                }
+                counter++;
+                }
+
+            return resultsNms;
         }
     }
 }
