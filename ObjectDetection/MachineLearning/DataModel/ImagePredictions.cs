@@ -6,7 +6,7 @@ namespace ObjectDetection.MachineLearning.DataModel
         // https://github.com/hunglc007/tensorflow-yolov4-tflite/blob/9f16748aa3f45ff240608da4bd9b1216a29127f5/core/config.py#L18
 
         // Defines size of anchor boxes
-        private readonly float [][][] Anchors = new float [][][]
+        private readonly float [][][] ANCHORS = new float [][][]
         {
             new float[][] { new float[] { 12, 16 }, new float[] { 19, 36 }, new float[] { 40, 28 } },
             new float[][] { new float[] { 36, 75 }, new float[] { 76, 55 }, new float[] { 72, 146 } },
@@ -125,17 +125,17 @@ namespace ObjectDetection.MachineLearning.DataModel
                 }
             }
 
-            return postProcessedResults;
+            return postProcesssedResults;
         }
 
         // Performs the Non-Max suppression and returns
-        private List<IAsyncResult> NMS(List<float[] postProcesssedBoundingBoxes, string [] categories>)
+        private List<Result> NMS(List<float[]> postProcesssedBoundingBoxes, string[] categories)
         {
-            postProcessBoundingBoxes = postProcessBoundingBoxes.OrderByDescending(x => x[4]).ToList();
+            postProcesssedBoundingBoxes = postProcesssedBoundingBoxes.OrderByDescending(x => x[4]).ToList();
             var resultsNms = new List<Result>();
 
             int counter = 0;
-            while(counter < PostProcessBoundingBoxes.Count)
+            while (counter < postProcesssedBoundingBoxes.Count)
             {
                 var result = postProcesssedBoundingBoxes[counter];
                 if(result == null)
@@ -169,6 +169,28 @@ namespace ObjectDetection.MachineLearning.DataModel
                 }
 
             return resultsNms;
+        }
+
+        // Intersection over union of boxes aka Jaccard Index
+        private float BoxIoU(float[] boxes1, float[] boxes2)
+        {
+            var area1 = GetBoxArea(boxes1);
+            var area2 = GetBoxArea(boxes2);
+
+            var dx = Math.Max(0, Math.Min(boxes1[2], boxes2[2]) - Math.Max(boxes1[0], boxes2[0]));
+            var dy = Math.Max(0, Math.Min(boxes1[3], boxes2[3]) - Math.Max(boxes1[1], boxes2[1]));
+
+            return (dx * dy) / (area1 + area2 - (dx * dy));
+        }
+
+        private float GetBoxArea(float[] box)
+        {
+            return (box[2] - box[0] * (box[3] - box[1]));
+        }
+
+        private float Sigmoid(float x)
+        {
+            return 1f / (1f + (float)Math.Exp(-x));
         }
     }
 }
