@@ -51,7 +51,7 @@ namespace ObjectDetection.MachineLearning.DataModel
         // https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/yolov4#postprocessing-steps
         private List<float[]> PostProcessBoundingBoxes(float[][] results, int classesCount)
         {
-            List<float> postProcesssedResults = new List<float>();
+            List<float[]> postProcesssedResults = new List<float[]>();
 
             for(int i = 0; i < results.Length; i++)
             {
