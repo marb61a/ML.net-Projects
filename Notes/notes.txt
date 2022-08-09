@@ -731,6 +731,20 @@ YOLO History
         - YOLO v5 is a completely different version than predecessors
             - It uses a PyTorch implementation rather than the original Darknet architecture
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    SENTIMENT ANALYSIS
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Sentiment Analysis Intuition
+    - It is used to monitor and understand customer feedback
+    - It detects the underlying emotional tone of words and derives understanding customer needs
+    - It helps provide better products and services
+    - It can be positive, negative or neutral
+    - There are different types of Sentiment Analysis
+        - Emotions, Fine Grained feedback, Intent Analysis, Aspect-based
+Sentiment Analysis Project
+    - 
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
 --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -766,4 +780,10 @@ Moving Files
 Gitignore Files
     - https://www.pluralsight.com/guides/how-to-use-gitignore-file
     - https://github.com/github/gitignore
-    
+
+Git issues
+    - Sometimes time commits can get out of alignment
+        - git reset -hard origin/<branch name>
+    - Trying to push too much can cause an error, increase buffer size should help
+        - https://stackoverflow.com/questions/59282476/error-rpc-failed-curl-92-http-2-stream-0-was-not-closed-cleanly-protocol-erro
+        - git config --global http.postBuffer 524288000
