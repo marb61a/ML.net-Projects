@@ -34,5 +34,32 @@ namespace SentimentAnalysis.MachineLearning.Common
 
             _trainedModel = trainingPipeline.Fit(_dataSplit.TrainSet);
         }
+
+        // Evaluates trained model
+        public BinaryClassificationMetrics Evaluate()
+        {
+            var testSetTransform = _trainedModel.Transform(_dataSplit.TestSet);
+
+            return mlContext.BinaryClassification.EvaluateNonCalibrated(testSetTransform);
+        }
+
+        // Save model in file
+        public void Save()
+        {
+            mlContext.Model.Save(_trainedModel, _dataSplit.TrainSet.Schema, ModelPath);
+        }
+
+        // Data preprocessing and feature engineering
+        private EstimatorChain<ITransformer> BuildDataProcessingPipeline()
+        {
+            return mlContext.Transforms.Text.FeaturizeText(outputColumnName: "Features", inputColumnName: nameof(SentimentData.SentimentText))
+                .AppendCacheCheckpoint(mlContext);
+        }
+
+        private DataOperationsCatalog.TrainTestData LoadAndPrepareData(string trainingFileName)
+        {
+            var trainingDataView = mlContext.Data.LoadFromTextFile<SentimentData>(trainingFileName, hasHeader: false);
+            return mlContext.Data.TrainTestSplit(trainingDataView, testFraction: 0.3);
+        }
     }
 }
