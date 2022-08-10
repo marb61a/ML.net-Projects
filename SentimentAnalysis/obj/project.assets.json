@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "MathNet.Numerics/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -147,6 +156,51 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.ML.DataView.dll": {}
+        }
+      },
+      "Microsoft.ML.Recommender/0.19.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML": "1.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.Recommender.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.Recommender.dll": {}
+        },
+        "build": {
+          "build/netstandard2.0/Microsoft.ML.Recommender.props": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libMatrixFactorizationNative.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libMatrixFactorizationNative.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libMatrixFactorizationNative.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libMatrixFactorizationNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libMatrixFactorizationNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/MatrixFactorizationNative.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/MatrixFactorizationNative.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {
@@ -1555,6 +1609,28 @@
     }
   },
   "libraries": {
+    "MathNet.Numerics/5.0.0": {
+      "sha512": "pg1W2VwaEQMAiTpGK840hZgzavnqjlCMTVSbtVCXVyT+7AX4mc1o89SPv4TBlAjhgCOo9c1Y+jZ5m3ti2YgGgA==",
+      "type": "package",
+      "path": "mathnet.numerics/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net461/MathNet.Numerics.dll",
+        "lib/net461/MathNet.Numerics.xml",
+        "lib/net48/MathNet.Numerics.dll",
+        "lib/net48/MathNet.Numerics.xml",
+        "lib/net5.0/MathNet.Numerics.dll",
+        "lib/net5.0/MathNet.Numerics.xml",
+        "lib/net6.0/MathNet.Numerics.dll",
+        "lib/net6.0/MathNet.Numerics.xml",
+        "lib/netstandard2.0/MathNet.Numerics.dll",
+        "lib/netstandard2.0/MathNet.Numerics.xml",
+        "mathnet.numerics.5.0.0.nupkg.sha512",
+        "mathnet.numerics.nuspec"
+      ]
+    },
     "Microsoft.CSharp/4.3.0": {
       "sha512": "P+MBhIM0YX+JqROuf7i306ZLJEjQYA9uUyRDE+OqwUI5sh41e2ZbPQV3LfAPh+29cmceE1pUffXsGfR4eMY3KA==",
       "type": "package",
@@ -1694,6 +1770,31 @@
         "microsoft.ml.dataview.1.7.1.nupkg.sha512",
         "microsoft.ml.dataview.nuspec",
         "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.Recommender/0.19.1": {
+      "sha512": "4OvTIokxdSkUEkCzVUs9EIXrnyq8Wiri7filzl7jd/907ECQbuyxkQn4npd2/UW8o5dw7lMk7RUdUe11BEevxg==",
+      "type": "package",
+      "path": "microsoft.ml.recommender/0.19.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYRIGHT",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.Recommender.props",
+        "lib/netstandard2.0/Microsoft.ML.Recommender.dll",
+        "lib/netstandard2.0/Microsoft.ML.Recommender.xml",
+        "microsoft.ml.recommender.0.19.1.nupkg.sha512",
+        "microsoft.ml.recommender.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-arm/native/libMatrixFactorizationNative.so",
+        "runtimes/linux-arm64/native/libMatrixFactorizationNative.so",
+        "runtimes/linux-x64/native/libMatrixFactorizationNative.so",
+        "runtimes/osx-arm64/native/libMatrixFactorizationNative.dylib",
+        "runtimes/osx-x64/native/libMatrixFactorizationNative.dylib",
+        "runtimes/win-x64/native/MatrixFactorizationNative.dll",
+        "runtimes/win-x86/native/MatrixFactorizationNative.dll"
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
@@ -5448,7 +5549,9 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.ML >= 1.7.1"
+      "MathNet.Numerics >= 5.0.0",
+      "Microsoft.ML >= 1.7.1",
+      "Microsoft.ML.Recommender >= 0.19.1"
     ]
   },
   "packageFolders": {
@@ -5494,9 +5597,17 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "MathNet.Numerics": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
           "Microsoft.ML": {
             "target": "Package",
             "version": "[1.7.1, )"
+          },
+          "Microsoft.ML.Recommender": {
+            "target": "Package",
+            "version": "[0.19.1, )"
           }
         },
         "imports": [
