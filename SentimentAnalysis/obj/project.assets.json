@@ -158,6 +158,39 @@
           "lib/netstandard2.0/Microsoft.ML.DataView.dll": {}
         }
       },
+      "Microsoft.ML.FastTree/1.7.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML": "1.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.FastTree.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.FastTree.dll": {}
+        },
+        "build": {
+          "build/netstandard2.0/Microsoft.ML.FastTree.props": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libFastTreeNative.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libFastTreeNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/FastTreeNative.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/FastTreeNative.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
       "Microsoft.ML.Recommender/0.19.1": {
         "type": "package",
         "dependencies": {
@@ -1770,6 +1803,27 @@
         "microsoft.ml.dataview.1.7.1.nupkg.sha512",
         "microsoft.ml.dataview.nuspec",
         "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.FastTree/1.7.1": {
+      "sha512": "xg0UW0fq6ZuaxIeAS5osgIX4Nb8xyk6UBD/Ier3mhGRdU5mnhF7Nhv5KHhy2NXRA8o9JzLfl2ocVU9zT6D9EYw==",
+      "type": "package",
+      "path": "microsoft.ml.fasttree/1.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/netstandard2.0/Microsoft.ML.FastTree.props",
+        "lib/netstandard2.0/Microsoft.ML.FastTree.dll",
+        "lib/netstandard2.0/Microsoft.ML.FastTree.xml",
+        "microsoft.ml.fasttree.1.7.1.nupkg.sha512",
+        "microsoft.ml.fasttree.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-x64/native/libFastTreeNative.so",
+        "runtimes/osx-x64/native/libFastTreeNative.dylib",
+        "runtimes/win-x64/native/FastTreeNative.dll",
+        "runtimes/win-x86/native/FastTreeNative.dll"
       ]
     },
     "Microsoft.ML.Recommender/0.19.1": {
@@ -5551,6 +5605,7 @@
     "net6.0": [
       "MathNet.Numerics >= 5.0.0",
       "Microsoft.ML >= 1.7.1",
+      "Microsoft.ML.FastTree >= 1.7.1",
       "Microsoft.ML.Recommender >= 0.19.1"
     ]
   },
@@ -5602,6 +5657,10 @@
             "version": "[5.0.0, )"
           },
           "Microsoft.ML": {
+            "target": "Package",
+            "version": "[1.7.1, )"
+          },
+          "Microsoft.ML.FastTree": {
             "target": "Package",
             "version": "[1.7.1, )"
           },

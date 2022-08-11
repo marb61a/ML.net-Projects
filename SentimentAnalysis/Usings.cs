@@ -7,3 +7,4 @@ global using Microsoft.ML.Trainers;
 global using Microsoft.ML.Transforms;
 global using Microsoft.ML.Calibrators;
 global using Microsoft.ML.Trainers.Recommender;
+global using Microsoft.ML.Trainers.FastTree;
