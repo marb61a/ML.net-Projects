@@ -8,8 +8,9 @@ namespace SentimentAnalysis.MachineLearning.Trainers
         {
             Name = $"Random Forest: {numberOfLeaves}-{numberOfTrees}";
             _model = mlContext.BinaryClassification.Trainers.FastForest(
-                                            numberOfLeaves: numberOfLeaves,
-                                            numberOfTrees: numberOfTrees);
+                numberOfLeaves: numberOfLeaves,
+                numberOfTrees: numberOfTrees
+            );
         }
     }
 }

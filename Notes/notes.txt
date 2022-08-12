@@ -742,7 +742,27 @@ Sentiment Analysis Intuition
     - It can be positive, negative or neutral
     - There are different types of Sentiment Analysis
         - Emotions, Fine Grained feedback, Intent Analysis, Aspect-based
+Sentiment Analysis Notebook
+    - Need to install Recommender and ExtensionLab
+    - Dataset being used is a labelled IMDB dataset 
 Sentiment Analysis Project
+    - Reuses the template from previous projects
+    - The IMDB labelled dataset is also used here
+    - There are multiple trainer used for the project
+        - GAM, Decision Tree, Random Forest among the examples
+    -
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    NLP WITH BERT
+--------------------------------------------------------------------------------------------------------------------------------------------------
+NLP Intuition
+    -
+Transformers Intuition
+    -
+HugginFace Models
+    -
+NLP with BERT Project
     - 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
