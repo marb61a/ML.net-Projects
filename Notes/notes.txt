@@ -757,8 +757,28 @@ Sentiment Analysis Project
                                                     NLP WITH BERT
 --------------------------------------------------------------------------------------------------------------------------------------------------
 NLP Intuition
-    -
+    - NLP or Natural Language Processing is a field of machine learning and linguistics focused on understanding everything to do with human language
+    - The aim of NLP tasks is to not alone understand single words individually but also understand the context they are being used.
+    - There are multiple different NLP tasks
+        - Text Classification
+        - Words Classification such as Named Entity Recognition
+        - Text Completion in sentences
+        - Extracting answers from text
+        - Generating new text such as translation and summarisation 
+    - There are huge challenges in the world of NLP
+        - This is because computers understand numbers and not words
+        - Text analysis is very complex because extracting meaning and context from text is difficult because language itself is difficult
+    - https://monkeylearn.com/blog/nlp-ai/
 Transformers Intuition
+    - Transformers are a network architecture based solely on attention mechanisms
+    - These architectures dispense with recurrence and convolutions completely
+    - Experiments have shown these models o be higher quality as well as being quicker to train and easier to parallelize
+    - They are primarily language models that have been trained on very large amounts of text data
+    - There are various options with them so that has led to their use in Deep Learning 
+    - They bought transfer learning into the NLP field
+    - High Level architecture
+        - Encoder
+        - Decoder
     -
 HugginFace Models
     -
