@@ -2,9 +2,9 @@ using SentimentAnalysis.MachineLearning.Common;
 
 namespace SentimentAnalysis.MachineLearning.Trainers
 {
-    public class SgdCalibratedTrainer: TrainerBase<CalibratedModelParametersBase<LinearBinaryModelParameters, PlattCalibrator>>
+    public class SgdUCalibratedTrainer: TrainerBase<CalibratedModelParametersBase<LinearBinaryModelParameters, PlattCalibrator>>
     {
-        public SgdCalibratedTrainer() : base()
+        public SgdUCalibratedTrainer() : base()
         {
             Name = "Sgd Calibrated";
             _model = mlContext
