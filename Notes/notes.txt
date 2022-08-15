@@ -796,11 +796,29 @@ Transformers Intuition
             - These are also known as sequence to sequence models
             - They are good for generative tasks such as translation and summarisation
     - Encoder Models
-        - 
-    Decoder Models
-        -
+        - These are bi-directional which makes them good at extracting context and useful information from text
+        - They are used a lot in NLU or Natural Language understanding
+        - Some of the uses are sequence classification, questions and answers, masked language modelling
+        - Some examples are BERT, RoBERTa and other variations  
+    - Decoder Models
+        - These are uni-directional which is why they excel at generating text when given the context
+        - Masked self-attention layers are used to hide the context
+        - They make use of an AOT regressive mechanism which means using their own output as input
+        - They excel at NLG or Natural Language Generation
+        - Some examples of decoder models are GPT-2, GPT-3
+    - Sequence to Sequence
+        - This model uses a separation of responsibilities
+        - The encoder understands the sequence and context
+        - The deocder uses that understanding to generate new sequences
+        - This is why they are used for text translation tasks and summarisation
+        - Examples of sequence to sequence architecture are BART and T5
+Architecture    
+    - https://www.analyticsvidhya.com/blog/2019/06/understanding-transformers-nlp-state-of-the-art-models/
+    - https://towardsdatascience.com/transformers-89034557de14
+    - https://towardsdatascience.com/intuition-behind-transformers-architecture-nlp-c2ac36174047
 HugginFace Models
-    -
+    - https://huggingface.co/course/chapter1/1
+    - https://neptune.ai/blog/natural-language-processing-with-hugging-face-and-transformers
 NLP with BERT Project
     - 
 
