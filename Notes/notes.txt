@@ -750,7 +750,6 @@ Sentiment Analysis Project
     - The IMDB labelled dataset is also used here
     - There are multiple trainer used for the project
         - GAM, Decision Tree, Random Forest among the examples
-    -
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -778,8 +777,28 @@ Transformers Intuition
     - They bought transfer learning into the NLP field
     - High Level architecture
         - Encoder
+            - This recieves an input and then builds a representation of it
+            - This means that the model is optimised to acquire understanding from the input
         - Decoder
-    -
+            - This uses encoder representations as well as other inputs
+            - This is then used to generate a target sequence
+            - This means that the model is optimised for generating outputs
+    - Attention
+        - A key feature of transformers is that they are built using special layers called attention layers
+        - These layers tell the model to pay specific attention to certain words passed in a sentences
+        - Other words can be more or less ignored
+    - Three types
+        - Encoder Only Models
+            - These are good for tasks that require input understanding such as sentence classification and named entity recognition
+        - Decoder Only Models
+            - They are good for text generation
+        - Encode-Decoder
+            - These are also known as sequence to sequence models
+            - They are good for generative tasks such as translation and summarisation
+    - Encoder Models
+        - 
+    Decoder Models
+        -
 HugginFace Models
     -
 NLP with BERT Project
