@@ -1,6 +1,6 @@
 namespace NLPBERT.MachineLearning.DataModel
 {
-    public class BertIuput
+    public class BertInput
     {
         [VectorType(1, 256)]
         [ColumnName("input_ids:0")]
@@ -17,6 +17,6 @@ namespace NLPBERT.MachineLearning.DataModel
         [VectorType(1)]
         [ColumnName("unique_ids_raw_output___9:0")]
         public long[] UniqueIds { get; set; }
-        
+
     }
 }
