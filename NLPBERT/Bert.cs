@@ -43,5 +43,43 @@ namespace NLPBERT
             var connectedTokens = _tokeniser.Untokenize(predictedTokens);
             return (connectedTokens, probability);
         }
+
+        private(int StartIndex, int EndIndex, float Probability) GetBestPrediction(BertPredictions result, int minIndex, int topN, int maxLength)
+        {
+            var bestStartLogits = result
+                .StartLogits
+                .Select((logit, index) => (Logit: logit, Index: index))
+                .OrderByDescending(o => o.Logit)
+                .Take(topN);
+            
+            var bestEndLogits = result
+                .EndLogits
+                .Select((logit, index) => (Logit: logit, Index: index))
+                .OrderByDescending(o => o.Logit)
+                .Take(topN);
+            
+            var bestResultsWithScore = bestStartLogits
+                .SelectMany(startLogit => 
+                    bestEndLogits.Select(endLogit => (
+                        StartLogit: startLogit.Index,
+                        EndLogit: endLogit.Index,
+                        Score: startLogit.Logit + endLogit.Logit
+                    ))
+                )
+                .Where(entry => !(
+                    entry.EndLogit < entry.StartLogit ||
+                    entry.EndLogit - entry.StartLogit > maxLength ||
+                    entry.StartLogit == 0 && entry.EndLogit == 0 ||
+                    entry.StartLogit < minIndex
+                ))
+                .Take(topN);
+            
+            var (item, probability) = bestResultsWithScore
+                .Softmax(o => o.Score)
+                .OrderByDescending(o => o.Probability)
+                .FirstOrDefault();
+
+            return (StartIndex: item.StartLogit, EndIndex: item.EndLogit, probability);
+        }
     }
 }
