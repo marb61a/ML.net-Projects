@@ -820,7 +820,21 @@ HugginFace Models
     - https://huggingface.co/course/chapter1/1
     - https://neptune.ai/blog/natural-language-processing-with-hugging-face-and-transformers
 NLP with BERT Project
-    - 
+    - Once again a simple console application will suffice
+    - The model will need to be downloaded
+        - https://github.com/onnx/models/tree/main/text/machine_comprehension/bert-squad/model
+        - Bertsquad 10 is the model needed
+        - Add to gitignore file to stop it being pushed during commits
+    - Both Onnx packages will need to be installed as well as the BertTokeniser package
+    - There will also be an extensions folder
+        - This will hold enumerables which will perform soft-max separations on enumerable types
+    - There will only be one sub-folder in machine learning folder in this project
+        - This will be to hold the data models
+    - BERT inputs are much more strict in C# because of the fact that it is strongly typed
+        - These dimensions are set in the BertInput data model file
+    - Using the GPU in the trainer can be done by using the gpuDeviceId directive
+        - In this project it can be set to 0 as there is no need to use a GPU
+    - Text to check whether the prediction works can be added as command line options
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
                                                     TROUBLESHOOTING
