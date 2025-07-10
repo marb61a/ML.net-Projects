@@ -1,8 +1,0 @@
-global using Microsoft.ML;
-global using Microsoft.ML.Data;
-global using System;
-global using System.Collections.Generic;
-global using System.Linq;
-global using Microsoft.ML.Trainers;
-global using Microsoft.ML.Transforms;
-global using Microsoft.ML.Calibrators;
